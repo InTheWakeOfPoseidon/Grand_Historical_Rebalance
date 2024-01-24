@@ -1,0 +1,1 @@
+A number of balance, system and gameplay changes to Europa Universalis 4 designed in order to produce more historical campaign results without using excessive railroading. Includes changes to economy, AI behavior, individual nation balance changes, technology spread, among others. 
