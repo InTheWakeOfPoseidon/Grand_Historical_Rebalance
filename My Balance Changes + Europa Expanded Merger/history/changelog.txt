@@ -1,0 +1,17 @@
+#Provinces: Big local autonomy increase for Mamluks, Poland, Lithuania, Aqq Qoyunlu and Timurids.
+#Areas affected: Mamluks = Levant. Poland = Ruthenia. Lithuania = Ruthenia. Aqq Qoyunlu = Iraq, non-turkic regions. Timurids #Most of the country outside Khorasan.
+#Added inwards perfection clergy estate privilege to Ming, Dai Viet and Korea.
+#Made Aqq Qoyunlu and Qara Qoyunly historical rivals.
+#Made Castile and Aragon historical friends.
+#Made Ethiopia start as government rank 2 instead of 3.
+#Changed estate land distribution in Lithuania, Mamluks and Poland. All countries now get more land ownership by nobles at the start.
+#All Manchu states (EJZ, MHX, MJZ, MYR and NHX) start with the Larger tribal host tribes estate privilege. Haixi and Jianzhou additionally get the secure succession privilege. Jianzhou alone gets primary of the bannermen privilege aswell.
+#Finetuned the estate land share for Ming a lot. It makes no sense in vanilla that Nobles have 0 land while Burghers have a lot. Doesn't feel representative of Imperial China at all.		
+#Added varna_allies opinion modifier to from all countries to all countries in this list: BOH, BOS, CRO, HUN, LIT, POL, SER, WAL. Should stop them from warring early on and will instead make them more likely to fight together.
+#Increased Ming's starting crownland to 20. It's actually insane how awful Ming's start is, it's ahistorical and makes Ming ridiculously weak.
+#Gave Oirat's starting ruler a new modifier (esenchoros_empire) that lets Oirat automatically keep Mongolia under control until the death of Esen Choros.
+#Gave Oirat's starting ruler bold_fighter_personality as an early game military buff.
+
+###EUROPA EXPANDED FIXES####
+#Ming now gets the flag "use_paradox_missions" before the start of the game, which fixes the fact that Europa Expanded broke Ming's mission tree by locking it behind this flag, but Ming can never take it because you can only take it by choosing between paradox and Europa Expanded missions, but Ming has no Europa Expanded missions, therefore never gets to choose. I suspect the flags are there purely for the sake of Qing.
+#Also the fact I can add "use_paradox_missions" to history means I can use country history to kill off any Europa Expanded mission trees I dislike.

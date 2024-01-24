@@ -1,0 +1,403 @@
+estate_nobles_land_rights = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+		not = { has_estate_privilege = estate_ghulams_land_rights }
+		not = { has_estate_privilege = estate_qizilbash_land_rights }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = mng_increased_land_rights_flag }
+		modifier = {
+			stability_cost_modifier = -0.05
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_government_attribute = BYZ_buff_dynatoi_land_grants  }
+		modifier = {
+			land_forcelimit_modifier = 0.1
+			max_absolutism = 5
+		}
+	}
+
+	benefits = {
+		governing_capacity = 150
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.05 }
+	}
+	#conditional_modifier = {
+	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
+	#	modifier = { monthly_ottoman_decadence = 0.02 }
+	#}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_nobles
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_land_rights }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_nobles_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_nobles_land_rights
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
+		}
+	}
+}
+
+
+
+estate_nobles_golden_liberty = {
+	icon = privilege_golden_liberty
+	max_absolutism = -15
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 3 } }
+	influence = 0.1
+	loyalty = 0.05
+	is_valid = {
+		OR = {
+			has_estate_privilege = estate_nobles_golden_liberty #Poland starts with it
+			has_reform = elective_monarchy
+			has_reform = polish_elective_monarchy 
+		}
+	}
+	can_revoke = {
+		if = {
+			limit = {
+				OR = {
+					tag = PLC
+					AND = {
+						tag = POL
+						NOT = { exists = PLC }
+					}
+				}
+			}
+			OR = {
+				AND = { 
+					NOT = { has_reform = polish_elective_monarchy } 
+					NOT = { has_reform = elective_monarchy }
+				}
+				has_reform = polish_autocratic_monarchy
+				mission_completed = plc_golden_liberty
+				absolutism = 70
+				AND = {
+					is_year = 1615
+					crown_land_share = 90
+				}
+			}
+		}
+		stability = 3
+		has_regency = no
+	}
+	on_revoked = {
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_stability = -3
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = PLC
+					AND = {
+						tag = POL
+						NOT = { exists = PLC }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_estate_privilege = estate_nobles_nieszawa_privileges
+				}
+				remove_estate_privilege = estate_nobles_nieszawa_privileges
+			}
+			if = {
+				limit = {
+					has_estate_privilege = estate_nobles_pacta_conventa
+				}
+				remove_estate_privilege = estate_nobles_pacta_conventa
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = pol_zebrzydowski_rebellion_flag }
+					is_year = 1600
+					government = monarchy
+				}
+				set_country_flag = pol_pact_conventa_flag
+			}
+		}
+		else_if = {
+			limit = {
+				OR = { 
+					has_reform = elective_monarchy
+					has_reform = polish_elective_monarchy
+				}
+				has_estate = estate_nobles
+			}
+			country_event = { id = estate_privileges_and_agendas_events.1 }
+		}
+	}
+	penalties = {
+	global_tax_modifier = -0.2
+	}
+	benefits = {
+		global_manpower_modifier = 0.2
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+
+estate_nobles_french_strong_duchies = {
+	icon = privilege_french_strong_duchies
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	loyalty = 0
+	influence = 0.1
+	is_valid = {
+		OR = {
+			has_estate_privilege = estate_nobles_french_strong_duchies
+			AND = {
+				tag = FRA
+				NOT = { has_estate_privilege = estate_nobles_strong_duchies }
+			}
+		}
+		any_subject_country = {
+			OR = {
+				is_subject_of_type = appanage
+				is_subject_of_type = vassal
+				is_subject_of_type = march
+				is_subject_of_type = client_march
+				is_subject_of_type = client_vassal
+				is_subject_of_type = personal_union
+			}
+			capital_scope = { region = france_region }
+			culture_group = french
+		}
+	}
+	can_select = {
+		custom_trigger_tooltip = {
+			tooltip = estate_nobles_strong_duchies_trigger_tooltip
+			calc_true_if = {
+				amount = 2
+				all_subject_country = {
+					OR = {
+						is_subject_of_type = appanage
+						is_subject_of_type = vassal
+						is_subject_of_type = march
+						is_subject_of_type = client_march
+						is_subject_of_type = client_vassal
+						is_subject_of_type = personal_union
+					}
+				}
+			}
+		}
+		NOT = { has_estate_privilege = estate_eunuchs_delegate_subject_diplomacy_privilege }
+	}
+	penalties = {
+	}
+	benefits = {
+		diplomatic_upkeep = 3
+		reduced_liberty_desire_on_same_continent = 20
+	}
+	conditional_modifier = {
+		trigger = { has_government_attribute = buffed_strong_duchies }
+		modifier = {
+			nobles_loyalty_modifier = 0.05
+		}
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 3
+			calc_true_if = {
+				amount = 1
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			calc_true_if = {
+				amount = 2
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
+		}
+	}
+}

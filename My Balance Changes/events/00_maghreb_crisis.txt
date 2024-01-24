@@ -1,0 +1,66 @@
+namespace = flavor_mor
+normal_or_historical_nations = yes
+
+#Crisis of the Maghreb
+country_event = {
+	id = flavor_mor.1
+	title = flavor_mor.1.t
+	desc = flavor_mor.1.d
+	picture = FAMINE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MOR
+		NOT = { is_year = 1450 }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = flavor_mor.1.a #Let them try! We shall rise again!
+		add_country_modifier = {
+			name = "mor_crisis"
+			duration = 18250
+		}
+		every_known_country = {
+			limit = {
+				capital_scope = {
+					region = maghreb_region
+				}
+			}
+			add_country_modifier = {
+				name = "mor_crisis"
+				duration = 18250
+			}
+			country_event = { id = flavor_mor.11 }
+		}
+	}
+}
+
+#Crisis of the Maghreb - Info Popup
+country_event = {
+	id = flavor_mor.11
+	title = flavor_mor.1.t
+	desc = flavor_mor.1.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { tag = MOR }
+	}
+	
+	option = {
+		name = flavor_mor.1.a
+		tooltip = {
+			add_country_modifier = {
+			name = "mor_crisis"
+			duration = 18250
+			}
+		}
+	}
+	
+}

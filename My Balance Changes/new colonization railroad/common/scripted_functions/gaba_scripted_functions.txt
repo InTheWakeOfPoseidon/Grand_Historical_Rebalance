@@ -1,0 +1,527 @@
+can_colonize_province = {
+	condition = {
+		potential = {
+			AND = {
+				FROM = { ai = yes }
+				FROM = { NOT = { tag = USA } }
+				FROM = { is_former_colonial_nation = no }
+				OR = {
+					AND = {
+						OR = {
+							province_id = 4565
+							province_id = 2803
+							province_id = 2804
+							province_id = 742
+							province_id = 2811
+							province_id = 4617
+							region = peru_region
+							region = central_america_region
+							region = mexico_region
+							region = la_plata_region
+							region = upper_peru_region
+							region = california_region
+							region = rio_grande_region
+							area = venezuela_area
+							area = eastern_llanos
+							area = western_llanos
+							area = coquivacoa_area
+							area = bogota_area
+							area = popayan_area
+							area = panama_area
+							area = maracaibo_area
+							area = central_llanos_area
+							area = cordillera_occidental_area
+							area = colombian_amazonas_area
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { region = peru_region } } }
+								NOT = { FROM = { capital_scope = { region = central_america_region } } } 
+								NOT = { FROM = { capital_scope = { region = mexico_region } } } 
+								NOT = { FROM = { capital_scope = { region = la_plata_region } } } 
+								NOT = { FROM = { capital_scope = { region = upper_peru_region } } }
+								NOT = { FROM = { capital_scope = { region = california_region } } }
+								NOT = { FROM = { capital_scope = { region = rio_grande_region } } }
+								NOT = { FROM = { capital_scope = { area = venezuela_area } } }
+								NOT = { FROM = { capital_scope = { area = eastern_llanos } } }
+								NOT = { FROM = { capital_scope = { area = western_llanos } } }
+								NOT = { FROM = { capital_scope = { area = coquivacoa_area } } }
+								NOT = { FROM = { capital_scope = { area = bogota_area } } }
+								NOT = { FROM = { capital_scope = { area = popayan_area } } }
+								NOT = { FROM = { capital_scope = { area = panama_area } } }
+								NOT = { FROM = { capital_scope = { area = maracaibo_area } } }
+								NOT = { FROM = { capital_scope = { area = central_llanos_area } } }
+								NOT = { FROM = { capital_scope = { area = cordillera_occidental_area } } }
+								NOT = { FROM = { capital_scope = { area = colombian_amazonas_area } } }
+								NOT = { FROM = { capital_scope = { area = upper_guyana_area } } }
+								NOT = { FROM = { capital_scope = { area = suriname_area } } }
+								NOT = { FROM = { capital_scope = { province_id = 2803 } } }
+								NOT = { FROM = { capital_scope = { province_id = 743 } } }
+								NOT = { FROM = { capital_scope = { province_id = 744 } } }
+								}
+							AND = {
+								FROM = { colonial_parent = { ai = yes } }
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { colonial_parent = { primary_culture = mexican } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = castillian } } }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = castillian } }	
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = castillian } }		
+							}
+						}
+					}
+					AND = {
+						OR = {
+							region = carribeans_region
+							province_id = 502
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_the_carribean } } } 
+								}
+							AND = {
+								FROM = { is_colonial_nation = yes }
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = castillian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = mexican } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = andalucian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = catalan } } }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = andalucian } }
+								NOT = { FROM = { primary_culture = catalan } }
+								}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = andalucian } }
+								NOT = { FROM = { primary_culture = catalan } }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							area = hudson_valley_area
+							area = delaware_valley_area
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_eastern_america } } }
+							}
+							AND = {
+								FROM = { colonial_parent = { ai = yes } }
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+								
+							}
+						}
+					}
+					AND = {
+						OR = {
+							area = great_woods_area
+							area = massachusetts_bay_area
+							area = connecticut_valley_area
+							area = iroquoisia_area
+							area = south_iroquoisia_area
+							area = susquehanna_area
+							area = maine_area
+							area = maryland_area
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_eastern_america } } }
+							}
+							AND = {
+								FROM = { colonial_parent = { ai = yes } }
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+						}
+					}
+					AND = {
+						#Hudson Bay Area
+						OR = {
+							area = james_bay_area
+							area = hudson_bay_area
+							area = assiniboia_area
+							area = saskatchewan_area
+							area = prairies_area
+							area = athabasca_area
+							area = inner_ontario_area
+							province_id = 1010
+							province_id = 1008
+							province_id = 2593
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_canada } } }
+							}
+							AND = {
+								FROM = { colonial_parent = { ai = yes } }
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							colonial_region = colonial_louisiana
+							province_id = 922
+							province_id = 2530
+							province_id = 921	
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_louisiana } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+						}
+					}
+					AND = {
+						region = cascadia_region
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { region = cascadia_region } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes }
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = russian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								#NOT = { FROM = { colonial_parent = { primary_culture = castillian } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = russian } }
+								NOT = { FROM = { primary_culture = american } }
+								#NOT = { FROM = { primary_culture = castillian } }
+								#NOT = { FROM = { primary_culture = mexican } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = russian } }
+								NOT = { FROM = { primary_culture = american } }
+								#NOT = { FROM = { primary_culture = castillian } }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							province_id = 1096
+							province_id = 1097
+							region = brazil_region
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { region = brazil_region } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes }
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = portugese } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = brazilian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { primary_culture = portugese } }
+								NOT = { FROM = { primary_culture = brazilian } }
+								NOT = { FROM = { primary_culture = dutch } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = portugese } }
+								NOT = { FROM = { primary_culture = brazilian } }
+								NOT = { FROM = { primary_culture = dutch } }
+							}
+						}						
+					}
+					AND = {
+						OR = {
+							area = cape_of_good_hope_area
+							area = south_african_plateau_area
+						}
+						NOT = { FROM = { primary_culture = english } }
+						NOT = { FROM = { primary_culture = cosmopolitan_french } }
+						NOT = { FROM = { primary_culture = dutch } }
+					}
+					AND = {
+						OR = {
+							region = australia_region
+							area = te_ika_a_maui_area
+							area = te_waipounamu_area
+							}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_australia } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = english } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = english } }
+							}
+						}					
+					}
+					AND = {
+						OR = {
+							area = chesapeake_area
+							area = upper_american_georgia_area
+							area = alabama_area
+							area = great_valley_area
+							area = piedmont_north_america_area
+							area = carolinas_area
+							area = south_carolina_area
+							area = american_georgia_area
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { area = chesapeake_area } } }
+								NOT = { FROM = { capital_scope = { area = upper_american_georgia_area } } }
+								NOT = { FROM = { capital_scope = { area = alabama_area } } }
+								NOT = { FROM = { capital_scope = { area = great_valley_area } } }
+								NOT = { FROM = { capital_scope = { area = piedmont_north_america_area } } }
+								NOT = { FROM = { capital_scope = { area = carolinas_area } } }
+								NOT = { FROM = { capital_scope = { area = south_carolina_area } } }
+								NOT = { FROM = { capital_scope = { area = american_georgia_area } } }
+								NOT = { FROM = { capital_scope = { region = northeast_america_region } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes }
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = swedish } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { primary_culture = swedish } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = swedish } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							area = florida_area
+							area = north_florida_area
+							province_id = 2533
+							province_id = 923
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { area = florida_area } } }
+								NOT = { FROM = { capital_scope = { area = north_florida_area } } }
+								NOT = { FROM = { capital_scope = { area = west_florida_area } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = mexican } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = castillian } } }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = mexican } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = mexican } }
+							}
+						}
+					}
+					AND = {
+						NOT = { is_year = 1800 }
+						OR = {
+							area = guinea_coast_area
+							area = gulf_of_guinea_area
+						}
+					}
+					AND = {
+						OR = {
+						province_id = 2257
+						province_id = 1141
+						}
+					}
+					AND = {
+						religion_group = muslim
+						OR = {
+							superregion = east_indies_superregion 
+							superregion = china_superregion
+							superregion = oceania_superregion
+							}
+						NOT = { same_continent = CAPITAL }
+					}
+					AND = {
+						OR = {
+							area = quelimane_area
+							area = limpopo_area
+						}
+						NOT = { FROM = { primary_culture = english } }
+						NOT = { FROM = { primary_culture = portugese } }
+						NOT = { FROM = { primary_culture = cosmopolitan_french } }
+						NOT = { FROM = { primary_culture = dutch } }
+					}
+					AND = {
+						region = canada_region
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_canada } } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = american } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = american } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							province_id = 743
+							province_id = 2931
+							province_id = 744
+							area = suriname_area
+						}
+						OR = {
+							AND = {
+								FROM = { is_colonial_nation = yes}
+								NOT = { FROM = { capital_scope = { colonial_region = colonial_colombia } } } 
+								}
+							AND = {
+								FROM = { is_colonial_nation = yes }
+								FROM = { colonial_parent = { ai = yes } }
+								NOT = { FROM = { colonial_parent = { primary_culture = castillian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = cosmopolitan_french } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = english } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = dutch } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = mexican } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = andalucian } } }
+								NOT = { FROM = { colonial_parent = { primary_culture = catalan } } }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = andalucian } }
+								NOT = { FROM = { primary_culture = catalan } }
+								}
+							AND = {
+								FROM = { is_colonial_nation = no }
+								NOT = { FROM = { primary_culture = castillian } }
+								NOT = { FROM = { primary_culture = cosmopolitan_french } }
+								NOT = { FROM = { primary_culture = english } }
+								NOT = { FROM = { primary_culture = dutch } }
+								NOT = { FROM = { primary_culture = mexican } }
+								NOT = { FROM = { primary_culture = andalucian } }
+								NOT = { FROM = { primary_culture = catalan } }
+								}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

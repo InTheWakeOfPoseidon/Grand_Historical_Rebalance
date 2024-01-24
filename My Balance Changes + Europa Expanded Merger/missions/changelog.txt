@@ -1,0 +1,8 @@
+#DH_Timurid_Missions.txt
+#Changed the mission Indian raid (dh_indian_raid) to only require forcelimit army size, rather than the current 40k troops. This makes it more likely that Afghanistan will succeed at the mission and try to attack India.
+#DOM_Ottoman_Missions.txt
+#tur_refill_the_ortas grants cores now, to make Ottoman AI much more aggressive in unifying Anatolia.
+#ME_Persia_Missions.txt
+#These are a fucking mess and are bugging Persia the fuck out and making them into a zoroastrian empire every game. The problem is that Persia most often spawns from Ajam (A Timurid Prince) and I don't want to tell any Timurid AIs to not take Europa Expanded missions, but I don't want them to still have Europa Expanded missions once they become Persia. I'm solving this by disabling the entire Europa Expanded mission tree for Persia.
+#ME_Ottomans_Missions
+#Ottomans no longer get a vassalize CB against Crimea from TUR_trebizond

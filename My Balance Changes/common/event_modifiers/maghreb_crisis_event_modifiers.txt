@@ -1,0 +1,6 @@
+mor_crisis = {
+	global_trade_power = -0.05
+	stability_cost_modifier = 0.1
+	global_institution_spread = -0.25
+    technology_cost = 0.25
+}

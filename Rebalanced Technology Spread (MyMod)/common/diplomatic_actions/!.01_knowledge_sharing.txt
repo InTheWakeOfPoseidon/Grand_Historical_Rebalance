@@ -1,0 +1,31 @@
+knowledge_sharing = {
+	condition = {
+		tooltip = Cant_Share_Knowledge
+		potential = {
+			AND = {
+				FROM = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+				
+				ROOT = {
+					NOT = {
+						is_subject_of = FROM
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					is_subject_of = ROOT					
+				}
+				
+				ROOT = {
+					is_subject_of = FROM					
+				}
+			}
+		}
+	}
+}

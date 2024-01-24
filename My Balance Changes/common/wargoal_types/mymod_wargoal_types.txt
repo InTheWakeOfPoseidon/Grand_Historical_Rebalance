@@ -1,0 +1,133 @@
+superiority_chinese_unification = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.2
+		
+		allowed_provinces = {
+			superregion = china_superregion
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_CGROUP_COUNTRIES
+		prov_desc = ALL_CHINESE_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.2
+		
+		allowed_provinces = {
+			OR = {
+				region = south_china_region
+				region = xinan_region
+				region = north_china_region
+				culture_group = FROM
+			}
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_CGROUP_COUNTRIES
+		prov_desc = ALL_CHINESE_PROVS
+	}
+	
+	war_name = CHINESE_UNIFICATION_WAR_NAME	
+}
+
+
+take_capital_take_mandate = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.2
+		
+		
+		allowed_provinces = {
+			OR = {
+				region = south_china_region
+				region = xinan_region
+				region = north_china_region
+				culture_group = FROM
+			}
+		}
+		
+		required_treaty_to_take_provinces = {
+			po_take_mandate
+		}
+
+		peace_options = {
+			po_demand_provinces
+			po_take_mandate
+		}
+
+		country_desc = CHINESE_EMPIRE_COUNTRY
+		prov_desc = ALL_CHINESE_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.2
+		
+		allowed_provinces = {
+			OR = {
+				region = south_china_region
+				region = xinan_region
+				region = north_china_region
+				culture_group = FROM
+			}
+		}
+
+		peace_options = {
+			po_demand_provinces
+		}
+
+		country_desc = CHINESE_EMPIRE_COUNTRY
+		prov_desc = ALL_CHINESE_PROVS
+	}
+	
+	war_name = CELESTIAL_EMPIRE_WAR_NAME
+}
+
+defend_capital_independence = {
+	type = defend_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1.5
+		
+		peace_options = {
+			po_concede_defeat
+			po_independence
+			po_demand_provinces
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.75
+		
+		allowed_provinces = {
+			always = yes
+		}		
+		
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = INDEPENDENCE_WAR_NAME
+}

@@ -1,0 +1,41 @@
+#EoC Rebalance
+
+new_mandate_holder = {
+	imperial_mandate = 0.25
+	land_maintenance_modifier = -0.1
+	land_forcelimit = 20
+	manpower_recovery_speed = 0.15
+	global_tax_income = 60
+	global_monthly_devastation = -0.1
+}
+
+rise_of_the_ottomans = {
+	monthly_ottoman_decadence = -1
+	ottoman_decadence_gain_modifier = -0.5
+	administrative_efficiency = 0.2
+}
+
+zenith_of_the_ottomans = {
+	monthly_ottoman_decadence = -0.5
+	ottoman_decadence_gain_modifier = -0.25
+}
+
+twilight_of_the_ottomans = {
+	ottoman_decadence_gain_modifier = 0.25
+	administrative_efficiency = -0.1
+}
+
+decline_of_the_ottomans = {
+	monthly_ottoman_decadence = 0.1
+	ottoman_decadence_gain_modifier = 0.5
+	administrative_efficiency = -0.2
+}
+
+esenchoros_empire = {
+	diplomatic_reputation = 3
+}
+
+jap_sengoku_jidai = {
+	army_tradition_decay = -0.01
+	liberty_desire_from_subject_development = 3
+}

@@ -1,0 +1,10 @@
+detested_overlord = {
+	opinion = -400
+	yearly_decay = 10
+	min = -400
+}
+
+varna_allies = {
+	opinion = 100 
+	yearly_decay = 10 
+}

@@ -1,0 +1,38 @@
+vassalaction = {
+	condition = {
+		tooltip = VASSALINVALID
+		potential = {
+		}
+		allow = {
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = { is_at_war = no }
+		}
+	}
+	condition = {
+		tooltip = No_Crimea_For_AI
+		potential = {
+			AND = {
+				ROOT = { 
+					tag = TUR
+					ai = yes
+				}
+				FROM = {
+					tag = CRI
+					ai = yes
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ROOT = { ai = no }
+				FROM = { ai = no }
+			}
+		}
+	}
+}

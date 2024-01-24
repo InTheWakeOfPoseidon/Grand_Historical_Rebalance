@@ -1,0 +1,84 @@
+native_tech_debuff = {
+
+	trigger = {
+		AND = {	
+			primitives = yes
+			government = native
+			NOT = {
+				has_reform = native_settle_down_reform
+			}
+		}
+	}
+	
+	technology_cost = 1
+}
+
+settled_native_tech_debuff = {
+
+	trigger = {
+		AND = {	
+			primitives = yes
+			government = native 
+			has_reform = native_settle_down_reform
+		}
+	}
+	
+	technology_cost = 0.5
+}
+
+tribal_primitive_debuff = {
+
+	trigger = {
+		AND = {	
+			primitives = yes
+			government = tribal
+		}
+	}
+	
+	technology_cost = 1
+}
+
+primitive_tech_debuff = {
+
+	trigger = {
+		AND = {	
+			primitives = yes
+				NOT = {
+					government = native
+					government = tribal
+				}
+		}
+	}
+	
+	technology_cost = 0.5
+}
+
+
+
+tribal_tech_debuff = {
+
+	trigger = {
+		AND = {	
+			government = tribal
+				NOT = {
+					primitives = yes
+					has_reform = steppe_horde
+				}
+		}
+	}
+	
+	technology_cost = 0.5
+}
+
+
+horde_tech_debuff = {
+
+	trigger = {
+		AND = {	
+			government = tribal
+			has_reform = steppe_horde
+		}
+	}
+	
+	technology_cost = 0.10
+}

@@ -1,0 +1,841 @@
+namespace = real_african_colonization
+
+
+##########################################################
+# Middle East and Caucasus
+##########################################################
+
+
+country_event = { #Middle East and Caucasus
+	id = real_african_colonization.1
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.1 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.1
+			
+		maghreb_region = {
+			add_permanent_province_modifier = {
+   				name = rac_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		caucasia_region = {
+			add_permanent_province_modifier = {
+   				name = caucasus_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		nafud_area = {
+			add_permanent_province_modifier = {
+   				name = inner_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		qasim_area = {
+			add_permanent_province_modifier = {
+   				name = inner_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		yamamah_area = {
+			add_permanent_province_modifier = {
+   				name = inner_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		tabuk_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		medina_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		mecca_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		asir_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}		
+		tihama_al_yemen_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		upper_yemen_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		yemen_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		hadramut_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		mahra_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		dhofar_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		mascat_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		oman_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		pirate_coast_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		bahrain_area = {
+			add_permanent_province_modifier = {
+   				name = coastal_arabia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		
+		persia_region = {
+			add_permanent_province_modifier = {
+   				name = persia_modifier
+				duration = 36500
+				hidden = yes
+			}
+		}	
+		khorasan_region = {
+			add_permanent_province_modifier = {
+   				name = persia_modifier
+				duration = 36500
+				hidden = yes
+			}
+		}
+		mashriq_region = {
+			add_permanent_province_modifier = {
+   				name = persia_modifier
+				duration = 36500
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+##########################################################
+# Africa
+##########################################################
+
+
+country_event = { #Africa
+	id = real_african_colonization.2
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.2 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.2
+			
+		southern_africa_superregion = {
+			add_permanent_province_modifier = {
+   				name = south_africa_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		niger_region = {
+			add_permanent_province_modifier = {
+   				name = sahel_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		guinea_region = {
+			add_permanent_province_modifier = {
+   				name = sahel_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		sahel_region = {
+			add_permanent_province_modifier = {
+   				name = sahel_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		horn_of_africa_region = {
+			add_permanent_province_modifier = {
+   				name = horn_africa_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		2475 = {
+			add_permanent_province_modifier = {
+   				name = sahara_institutions_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		2474 = {
+			add_permanent_province_modifier = {
+   				name = sahara_institutions_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		1127 = {
+			add_permanent_province_modifier = {
+   				name = sahara_institutions_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+
+##########################################################
+# Central Asia
+##########################################################
+
+
+country_event = { #Central Asia
+	id = real_african_colonization.3
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.3 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.3
+	
+		lower_yik_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		arys_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		jetysuu_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		ferghana_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		khiva_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		balchasj_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		kazakhstan_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		transoxiana_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		transcaspia_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		nogai_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		termez_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		kyzylkum_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		syr_darya_area = {
+			add_permanent_province_modifier = {
+   				name = central_asia_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+##########################################################
+# Himalayas
+##########################################################
+
+
+
+
+country_event = { #Himalayas
+	id = real_african_colonization.4
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.4 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.4
+
+		nepal_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		2074 = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		2073 = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		4521 = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		utsang_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		tsang_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}		
+		kham_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}		
+		bhutan_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}		
+		ngari_area = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}		
+		2134 = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		705 = {
+			add_permanent_province_modifier = {
+   				name = tibet_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+
+##########################################################
+# Europe
+##########################################################
+
+namespace = real_african_colonization
+country_event = { #Europe
+	id = real_african_colonization.5
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	
+	fire_only_once = yes
+	trigger = {
+#		NOT = { ai = yes }
+		NOT = { has_global_flag = rac_event_started.6 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.6
+			
+		italy_region = {
+			add_permanent_province_modifier = {
+   				name = italy_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		france_region = {
+			add_permanent_province_modifier = {
+   				name = france_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		iberia_region = {
+			add_permanent_province_modifier = {
+   				name = iberia_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		east_midlands_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		west_midlands_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		yorkshire_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		scottish_marches_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		wessex_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		home_counties_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		east_anglia_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		wales_area = {
+			add_permanent_province_modifier = {
+   				name = england_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+
+		azov_area = {
+			add_permanent_province_modifier = {
+   				name = crimea_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		crimea_area = {
+			add_permanent_province_modifier = {
+   				name = crimea_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		yedisan_area = {
+			add_permanent_province_modifier = {
+   				name = crimea_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		zaporizhia_area = {
+			add_permanent_province_modifier = {
+   				name = crimea_score_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		russia_region = {
+			limit = { owned_by = NOV }
+			add_permanent_province_modifier = {
+   				name = fragile_state_modifier
+				duration = 18250
+				hidden = yes
+			}
+		}
+		scandinavia_region = {
+			limit = { owned_by = NOV }
+			add_permanent_province_modifier = {
+   				name = fragile_state_modifier
+				duration = 18250
+				hidden = yes
+			}
+		}
+		ural_region = {
+			limit = { owned_by = NOV }
+			add_permanent_province_modifier = {
+   				name = fragile_state_modifier
+				duration = 18250
+				hidden = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+
+##########################################################
+# Tarim Basin
+##########################################################
+
+
+country_event = { #Tarim Basin
+	id = real_african_colonization.6
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.6 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.6
+	
+		tarim_basin_area = {
+			add_permanent_province_modifier = {
+   				name = tarim_basin_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		kashgaria_area = {
+			add_permanent_province_modifier = {
+   				name = tarim_basin_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		710 = {
+			add_permanent_province_modifier = {
+   				name = tarim_basin_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		711 = {
+			add_permanent_province_modifier = {
+   				name = tarim_basin_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		4693 = {
+			add_permanent_province_modifier = {
+   				name = tarim_basin_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}
+
+
+########################
+#East Asia
+########################
+
+
+country_event = {
+	id = real_african_colonization.7
+	title = RAC_EVT1TITLE
+	desc = RAC_EVT1DESC
+	picture = ANGRY_MOB_eventPicture
+	hidden = yes
+	is_triggered_only = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = rac_event_started.7 }
+	}
+
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = rac_event_started.7
+	
+		korea_region = {
+			add_permanent_province_modifier = {
+   				name = korea_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+
+		japan_region = {
+			add_permanent_province_modifier = {
+   				name = japan_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		vietnam_area = {
+			add_permanent_province_modifier = {
+   				name = vietnam_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		red_river_delta_area = {
+			add_permanent_province_modifier = {
+   				name = vietnam_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		champa_area = {
+			add_permanent_province_modifier = {
+   				name = vietnam_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		add_prestige = 0
+	}
+}

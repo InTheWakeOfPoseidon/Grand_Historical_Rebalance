@@ -1,0 +1,349 @@
+veche_republic = {
+	icon = "russian_principality"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_reform = great_veche_republic }
+		NOT = { have_had_reform = great_veche_republic }
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = veche_republic
+			}
+		}
+	}
+	legacy_equivalent = veche_republic_legacy
+	nation_designer_trigger = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+	}
+	modifiers = {
+		merchants = 1
+		governing_capacity = 350
+		max_absolutism = 10
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.1
+		global_manpower_modifier = 0.2 #Early game buff for Russian states, mimics modifier from Tsardom government.
+		land_forcelimit_modifier = 0.2 #Russia buff
+		land_maintenance_modifier = -0.2
+		global_regiment_cost = -0.10 #Added to all Russian states
+		core_creation = -0.1
+		province_warscore_cost = -0.10
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	boost_income = yes
+	fixed_rank = 1
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		elections_increase_factions_influence = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+			NOT = { has_dlc = "Third Rome" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			NOT = { has_dlc = "Mare Nostrum" }
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = { 
+			OR = {
+				has_dlc = "Third Rome" 
+				has_dlc = "Domination"
+			}
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+		custom_attributes = {
+			weaker_russian_ability = yes
+		}
+	}
+	duration = 6
+}
+
+great_veche_republic = {
+	icon = "king"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+		religion = orthodox
+		OR = {
+			AND = {
+				tag = RUS
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				tag = UKR
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = great_veche_republic
+			}
+		}
+	}
+	fixed_rank = 3
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	nation_designer_trigger = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+		religion = orthodox
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.2
+		merchants = 1
+		max_absolutism = 20
+		governing_capacity = 500
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.2
+		land_forcelimit_modifier = 0.2 #Russia buff
+		land_maintenance_modifier = -0.2
+		global_regiment_cost = -0.10 #Added to all Russian states
+		core_creation = -0.1
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = { 
+			has_dlc = "Third Rome" 
+			NOT = { has_dlc = "Domination" }
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			russian_mechanic
+			russian_modernization_mechanic
+		}
+	}
+	duration = 6
+}
+
+great_russian_republic_reform = {
+	icon = "organized_military_staff"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = great_russian_republic_reform
+			have_had_reform = great_russian_republic_reform
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = great_russian_republic_reform
+			}
+		}
+	}
+	fixed_rank = 3
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	modifiers = {
+		global_manpower_modifier = 0.2
+		merchants = 2
+		governing_capacity = 1000
+		yearly_absolutism = 0.5
+		global_autonomy = -0.05
+		embracement_cost = -0.5
+		max_absolutism = 50
+		land_forcelimit_modifier = 0.2 #Russia buff
+		land_maintenance_modifier = -0.2
+		global_regiment_cost = -0.10 #Added to all Russian states
+		core_creation = -0.1
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+
+	conditional = {
+		allow = { has_dlc = "Third Rome" }
+		claim_states = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			russian_rule_mechanic
+		}
+	}
+	duration = 6
+}
+
+revolutionary_republic_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "revolutionary_republic"
+	potential = {
+		has_reform = revolutionary_republic_reform
+	}
+	legacy_equivalent = revolutionary_republic
+	valid_for_new_country = no
+	duration = 4
+	valid_for_nation_designer = no
+	republican_name = yes
+	royal_marriage = no
+	uses_revolutionary_zeal = yes
+	revolutionary = yes
+
+	modifiers = {
+		tolerance_heretic = 2
+		land_morale = 0.1
+		global_autonomy = -0.2
+		governing_capacity = 500
+		max_revolutionary_zeal = 50
+		max_absolutism = 40
+		papal_influence = -100
+		allowed_rev_guard_fraction = 0.2	
+	}
+	fixed_rank = 3
+	effect = {
+		custom_tooltip = break_every_non_rev_republic_alliance_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = { government = republic }
+					is_revolutionary = no
+				}
+				ROOT = { break_alliance = PREV }
+			}
+		}
+	}
+
+	custom_attributes = {
+		cannot_ally_non_republics_or_non_rev = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		locked_government_type = yes
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "Rights of Man"
+		}
+		factions = {
+			rr_jacobins
+			rr_royalists
+			rr_girondists
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_china_flag
+					is_revolutionary = no
+				}
+				clr_country_flag = is_revolutionary_china_flag
+				restore_country_name = yes
+				override_country_name = CHINA_STRING
+				set_country_flag = is_china_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_turkey_flag
+					is_revolutionary = no
+				}
+				clr_country_flag = is_revolutionary_turkey_flag
+				restore_country_name = yes
+				override_country_name = TURKEY_STRING
+				set_country_flag = is_turkey_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_gurkani_flag
+					is_revolutionary = no
+				}
+				clr_country_flag = is_revolutionary_gurkani_flag
+				restore_country_name = yes
+				override_country_name = GURKANI_EMPIRE_STRING
+				set_country_flag = is_gurkani_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_iran_flag
+					is_revolutionary = no
+				}
+				clr_country_flag = is_revolutionary_iran_flag
+				restore_country_name = yes
+				override_country_name = IRAN_STRING
+				set_country_flag = is_iran_flag
+			}
+		}
+	}
+}

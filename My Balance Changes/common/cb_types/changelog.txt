@@ -1,0 +1,2 @@
+####cb_chinese_unification and cb_take_mandate
+#Neither cb allows to claim vassals or tributaries anymore, to smooth out chinese unification.

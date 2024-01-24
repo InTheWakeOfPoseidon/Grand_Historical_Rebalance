@@ -1,0 +1,8 @@
+#### Unguarded nomadic frontier.
+#Made it so states with the 50 year-long new dynasty modifier from claiming the mandate can't have this disaster, to stop new AI dynasties from performing so badly.
+#### Ottoman Power Struggle.
+#Nerfed the Pasha Rebellion disaster a lot. +10 national unrest is unreasonably enormous. The Ottomans aren't supposed to be completely destroyed in a regular campaign, just weakened. Changed from +10 unrest to +4. Nerfed the global autonomy effect to 0.1 instead of 0.25 too.
+#Made the Ottoman Power struggle disaster only trigger in age of revolutions FOR THE AI ONLY.
+#Disaster can now end if Ottomans are below 120 provinces (FOR THE AI ONLY.), are revolutionary (FOR BOTH PLAYER AND AI), or the disaster has been ongoing for 50 years (FOR THE AI ONLY.).
+####Ming Crisis
+#Can now trigger even during other disasters. Unguarded nomadic frontier making Ming immune to collapse even if it utterly nukes its mandate is incoherent.

@@ -1,0 +1,150 @@
+can_make_core = {
+	condition = {
+		tooltip = "Creating Full Cores is currently toggled off."
+		potential = {
+			owner = { has_country_flag = ME_toggle_no_full_cores }
+			is_core = owner
+		}
+		allow = {
+			OR = {
+				NOT = {
+					owner = { has_country_flag = ME_toggle_no_full_cores }
+				}
+				NOT = { is_core = owner }
+			}
+		}
+	}
+}
+
+# Called by can_add_province_to_hre
+is_possible_hre_province = {
+	condition = {
+		tooltip = "APH_ONLY_EUROPE"
+		potential = {
+		}
+		allow = {
+			OR = {
+				continent = europe
+				AND = {
+					has_global_flag = HRE_roman_borders
+					OR = {
+						continent = europe
+						region = maghreb_region
+						AND = {
+							region = egypt_region
+							NOT = { area = lower_nubia_area }
+						}
+						region = mashriq_region
+						region = anatolia_region
+						region = caucasia_region
+						area = tabriz_area
+						#area = medina_area
+						#area = mecca_area
+						area = tabuk_area
+						#area = dongola_area
+						province_id = 4272
+						province_id = 4294
+						province_id = 415
+						province_id = 4293
+						#province_id = 2324
+						#province_id = 1232
+						province_id = 1229
+					}
+				}
+				has_province_flag = HRE_special_eligible_province
+			}
+		}
+	}
+}
+
+can_increase_stability = {
+	condition = {
+		tooltip = me_disabled_manual_stability
+		potential = {
+			has_country_flag = ME_cannot_increase_stability
+		}
+		allow = {
+			NOT = {
+				has_country_flag = ME_cannot_increase_stability
+			}
+		}
+	}
+}
+
+can_improve_tax = {
+	condition = {
+		tooltip = me_disabled_manual_developing
+		potential = {
+			owner = {
+				has_country_flag = ME_tim_deny_developing_arabian_provinces
+			}
+			region = arabia_region
+		}
+		allow = {
+			OR = {
+				owner = {
+					NOT = {
+						has_country_flag = ME_tim_deny_developing_arabian_provinces
+					}
+				}
+				NOT = { region = arabia_region }
+			}
+		}
+	}
+}
+
+can_improve_production = {
+	condition = {
+		tooltip = me_disabled_manual_developing
+		potential = {
+			owner = {
+				has_country_flag = ME_tim_deny_developing_arabian_provinces
+			}
+			region = arabia_region
+		}
+		allow = {
+			OR = {
+				owner = {
+					NOT = {
+						has_country_flag = ME_tim_deny_developing_arabian_provinces
+					}
+				}
+				NOT = { region = arabia_region }
+			}
+		}
+	}
+}
+
+can_improve_manpower = {
+	condition = {
+		tooltip = me_disabled_manual_developing
+		potential = {
+			owner = {
+				has_country_flag = ME_tim_deny_developing_arabian_provinces
+			}
+			region = arabia_region
+		}
+		allow = {
+			OR = {
+				owner = {
+					NOT = {
+						has_country_flag = ME_tim_deny_developing_arabian_provinces
+					}
+				}
+				NOT = { region = arabia_region }
+			}
+		}
+	}
+}
+
+#can_colonize_province = {
+#	condition = {
+#		tooltip = me_was_razed_by_timurids
+#		potential = {
+#			has_province_flag = me_tim_wasteland
+#		}
+#		allow = {
+#			NOT = { has_province_flag = me_tim_wasteland }
+#		}
+#	}
+#}

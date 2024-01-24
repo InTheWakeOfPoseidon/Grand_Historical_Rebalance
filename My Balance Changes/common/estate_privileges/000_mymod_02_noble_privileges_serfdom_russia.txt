@@ -1,0 +1,595 @@
+####SERFDOM########
+#####
+#Russia Privileges
+estate_nobles_mestnichestvo = {
+	icon = privilege_investigate_corruption
+	is_valid = {
+		has_estate_privilege = estate_nobles_mestnichestvo
+		OR = {
+			ai = no
+			NOT = { is_year = 1500 }
+		}
+	}
+	loyalty = 0.05
+	influence = 0.1
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	penalties = {
+		reform_progress_growth = -0.33
+	}
+	can_revoke = {
+		if = {
+			limit = { OR = { ai = no was_player = yes } }
+			stability = 1
+			legitimacy = 90
+		}
+		else = {
+			is_year = 1500
+		}
+	}
+	on_revoked = {
+		if = {
+			limit = { OR = { ai = no was_player = yes } }
+			add_stability = -1
+			add_legitimacy = -15
+			add_corruption = 2
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_government_mechanic = russian_modernization_mechanic
+		}
+		modifier = {
+			monthly_russian_modernization = -0.5
+			russian_modernization_gain_modifier = -0.5
+		}
+		is_bad = yes
+	}
+	#modifier_by_land_ownership = {
+	#	yearly_corruption = 0.4
+	#}
+	ai_will_do = {
+		factor = -300
+	}
+}
+
+estate_nobles_early_serfdom = {
+	icon = privilege_serf
+	loyalty = 0.15
+	influence = 0.05
+	max_absolutism = 0
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		NOT = { has_country_flag = liberated_peasants }
+		NOT = { has_country_flag = level_two_serfdom_privileges }
+		NOT = { has_country_flag = level_three_serfdom_privileges }
+		NOT = { has_country_flag = final_serfdom_privileges }
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_nobles_increased_peasant_freedom }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		country_event = {
+			id = flavor_rus.300
+		}
+		set_country_flag = rus_enacted_early_serfdom_flag
+		set_country_flag = rus_peasant_fate
+		clr_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = enserfed_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		war_taxes_cost_modifier = -0.5
+		global_manpower_modifier = 0.1
+		global_unrest = -1
+	}
+	penalties = {
+		global_institution_spread = -0.1
+		monthly_russian_modernization = -0.25
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_serfdom_privileges }
+		modifier = {
+			global_monthly_devastation = -0.05
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_legalized_serfdom = {
+	icon = privilege_serf
+	loyalty = 0.15
+	influence = 0.1
+	max_absolutism = 0
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		OR = {
+			has_estate_privilege = estate_nobles_legalized_serfdom
+			has_country_flag = level_two_serfdom_privileges
+		}
+		NOT = { has_country_flag = liberated_peasants }
+		NOT = { has_country_flag = level_three_serfdom_privileges }
+		NOT = { has_country_flag = final_serfdom_privileges }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		set_country_flag = rus_enacted_early_serfdom_flag
+		clr_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = enserfed_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		war_taxes_cost_modifier = -0.5
+		global_manpower_modifier = 0.2
+	}
+	penalties = {
+		global_institution_spread = -0.1
+		technology_cost = 0.05
+		idea_cost = 0.05
+		monthly_russian_modernization = -0.25
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_serfdom_privileges }
+		modifier = {
+			global_monthly_devastation = -0.05
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_total_serfdom = {
+	icon = privilege_serf
+	loyalty = 0.15
+	influence = 0.1
+	max_absolutism = 0
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		OR = {
+			has_estate_privilege = estate_nobles_total_serfdom
+			has_country_flag = level_three_serfdom_privileges
+		}
+		NOT = { has_country_flag = liberated_peasants }
+		NOT = { has_country_flag = final_serfdom_privileges }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		set_country_flag = rus_enacted_early_serfdom_flag
+		clr_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = enserfed_peasants
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		war_taxes_cost_modifier = -1
+		global_manpower_modifier = 0.25
+	}
+	penalties = {
+		global_institution_spread = -0.1
+		technology_cost = 0.1
+		idea_cost = 0.1
+		monthly_russian_modernization = -0.5
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_serfdom_privileges }
+		modifier = {
+			global_monthly_devastation = -0.05
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_restricted_serfdom = {
+	icon = privilege_serf
+	loyalty = 0.05
+	influence = 0.1
+	max_absolutism = 0
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		has_estate_privilege = estate_nobles_restricted_serfdom
+		NOT = { has_country_flag = liberated_peasants }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		set_country_flag = rus_enacted_early_serfdom_flag
+		clr_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = enserfed_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		global_unrest = -1
+		global_manpower_modifier = 0.1
+	}
+	penalties = {
+		global_institution_spread = -0.1
+		technology_cost = 0.1
+		idea_cost = 0.1
+		monthly_russian_modernization = -0.125
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_serfdom_privileges }
+		modifier = {
+			global_monthly_devastation = -0.05
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_devastating_serfdom = {
+	icon = privilege_serf
+	loyalty = 0.05
+	influence = 0.15
+	max_absolutism = 0
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		has_estate_privilege = estate_nobles_devastating_serfdom
+		NOT = { has_country_flag = liberated_peasants }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		set_country_flag = rus_enacted_early_serfdom_flag
+		clr_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = enserfed_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = enserfed_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.398
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		global_unrest = -2
+		global_manpower_modifier = 0.33
+	}
+	penalties = {
+		development_cost = 0.25
+		global_institution_spread = -0.25
+		technology_cost = 0.15
+		idea_cost = 0.15
+		monthly_russian_modernization = -0.5
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_serfdom_privileges }
+		modifier = {
+			global_monthly_devastation = -0.05
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_increased_peasant_freedom = {
+	icon = privilege_peasant
+	loyalty = -0.1
+	influence = 0
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		NOT = { has_country_flag = level_two_serfdom_privileges }
+		NOT = { has_country_flag = enserfed_peasants }
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_nobles_early_serfdom }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		country_event = {
+			id = flavor_rus.303
+		}
+		set_country_flag = rus_enacted_early_disconnection_flag
+		set_country_flag = rus_peasant_fate
+		clr_country_flag = rus_enacted_early_serfdom_flag
+		set_country_flag = liberated_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = liberated_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.399
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = liberated_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.399
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		russian_modernization_gain_modifier = 0.1
+		global_institution_spread = 0.05
+		monthly_russian_modernization = 0.25
+	}
+	penalties = {
+		global_manpower_modifier = -0.2
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_free_peasantry_privileges }
+		modifier = {
+			global_trade_power = 0.1
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_peasant_liberation = {
+	icon = privilege_peasant
+	loyalty = -0.15
+	influence = -0.05
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	is_valid = {
+		has_dlc = "Domination"
+		OR = {
+			has_reform = principality
+			has_reform = veche_republic
+			has_reform = tsardom
+			has_reform = russian_empire_reform
+			has_reform = great_veche_republic
+			has_reform = great_russian_republic_reform
+		}
+		has_country_flag = level_two_serfdom_privileges
+		NOT = { has_country_flag = enserfed_peasants }
+	}
+	can_revoke = no
+	on_granted = {
+		custom_tooltip = estate_privilege_cannot_be_revoked
+		block_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		set_country_flag = rus_enacted_early_disconnection_flag
+		clr_country_flag = rus_enacted_early_serfdom_flag
+		set_country_flag = liberated_peasants
+	}
+	on_revoked = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = liberated_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.399
+			}
+		}
+	}
+	on_invalid = {
+		unblock_estate_removing_reforms = {
+			estate = estate_nobles
+		}
+		clr_country_flag = liberated_peasants
+		if = {
+			limit = { is_revolutionary = yes }
+			country_event = {
+				id = flavor_rus.399
+			}
+		}
+	}
+	benefits = {
+		nobles_privilege_slots = 1
+		russian_modernization_gain_modifier = 0.1
+		global_institution_spread = 0.1
+		monthly_russian_modernization = 0.375
+	}
+	penalties = {
+		global_manpower_modifier = -0.2
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = rus_buffed_free_peasantry_privileges }
+		modifier = {
+			global_trade_power = 0.1
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

@@ -1,0 +1,144 @@
+dubious_mandate = {
+	potential = {
+		has_reform = celestial_empire
+		has_dlc = "Mandate of Heaven"
+	}
+
+	trigger = {
+		OR = {
+			NOT = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 45
+					superregion = china_superregion
+				}
+			}
+		has_disaster = ming_crisis
+		}
+	}
+	
+	relation_with_same_culture = -100 #Warlord groups will aggressively seek to reunify China.
+	relation_with_same_culture_group = -100
+	diplomatic_reputation = -100
+}
+
+
+AI_technology_hack = {
+	potential = {
+		OR = {
+		technology_group = western
+		technology_group = eastern
+		technology_group = ottoman
+		technology_group = high_american
+		}
+		ai = yes
+#		hidden = yes
+	}
+	
+	trigger = {
+		any_neighbor_country = {
+			tech_difference = 6
+		}
+	}
+	
+	technology_cost = -0.33
+}
+		
+AI_technology_hack_2 = {
+	potential = {
+		OR = {
+		technology_group = western
+		technology_group = eastern
+		technology_group = ottoman
+		technology_group = muslim
+		technology_group = indian
+		technology_group = chinese
+		technology_group = high_american
+		primary_culture = manchu
+		primary_culture = manchu_new
+		}
+		ai = yes
+#		hidden = yes
+	}
+	
+	trigger = {
+		any_neighbor_country = {
+			tech_difference = 9
+		}
+	}
+	
+	technology_cost = -0.33
+}
+
+AI_technology_hack_3 = {
+	potential = {
+		OR = {
+		technology_group = western
+		technology_group = eastern
+		technology_group = ottoman
+		technology_group = muslim
+		technology_group = indian
+		technology_group = chinese
+		technology_group = high_american
+		primary_culture = manchu
+		primary_culture = manchu_new
+		}
+		ai = yes
+#		hidden = yes
+	}
+	
+	trigger = {
+		any_neighbor_country = {
+			tech_difference = 12
+		}
+	}
+	
+	technology_cost = -0.33
+}
+
+
+AI_technology_hack_4 = {
+	potential = {
+		OR = {
+		technology_group = western
+		technology_group = eastern
+		technology_group = ottoman
+		technology_group = muslim
+		technology_group = indian
+		technology_group = chinese
+		technology_group = high_american
+		primary_culture = manchu
+		primary_culture = manchu_new
+		}
+		ai = yes
+#		hidden = yes
+	}
+	
+	trigger = {
+		any_neighbor_country = {
+			tech_difference = 15
+		}
+	}
+	
+	technology_cost = -0.33
+}
+
+new_mandate_holder_extra_for_ai = {
+	potential = {
+		has_reform = celestial_empire
+		has_dlc = "Mandate of Heaven"
+	}
+	trigger = {
+		AND = {
+			has_country_modifier = new_mandate_holder
+			ai = yes
+		}
+	}
+	
+	land_maintenance_modifier = -0.1
+	manpower_recovery_speed = 0.1
+	global_tax_income = 40
+	global_monthly_devastation = -0.15
+	global_unrest = -5
+	technology_cost = -0.2
+	global_institution_spread = 0.2
+}

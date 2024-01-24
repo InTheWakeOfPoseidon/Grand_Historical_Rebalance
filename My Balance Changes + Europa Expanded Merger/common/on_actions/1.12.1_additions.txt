@@ -1,0 +1,4002 @@
+# country
+on_religion_change = {
+	if = {
+		limit = {
+			religion_group = muslim
+			NOT = { has_faction = caliphate_faction }
+		}
+		add_faction = caliphate_faction
+	}
+}
+
+# this = Released country, FROM = Releasing country
+on_country_released = {
+	FROM = { ME_change_all_subject_colors = yes }
+	this = {
+		if = {
+			limit = {
+				religion_group = muslim
+				NOT = { has_faction = caliphate_faction }
+			}
+			add_faction = caliphate_faction
+		}
+	}
+}
+
+on_pre_adm_advisor_fired = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					advisor = philosopher
+					advisor = natural_scientist
+					advisor = artist
+					advisor = treasurer
+					advisor = theologian
+					advisor = master_of_mint
+					advisor = inquisitor
+					AND = {
+						advisor = me_reformist
+						has_country_flag = sax_unlock_new_advisor_type_reformist
+					}
+					AND = {
+						advisor = me_lyricist
+						has_country_flag = sax_unlock_new_advisor_type_lyricist
+					}
+					AND = {
+						advisor = GRA_polymath
+						has_country_flag = GRA_polymath
+					}
+					AND = {
+						advisor = sufi_scholar_advisor
+						has_country_flag = allow_sufi_scholar
+					}
+				}
+			}
+		}
+		clr_country_flag = adm_advisor_automatic_replace
+	}
+	if = {
+		limit = {
+			has_country_flag = adm_advisor_automatic_replace
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						philosopher = 1
+						NOT = { philosopher = 2 }
+					}
+					AND = {
+						natural_scientist = 1
+						NOT = { natural_scientist = 2 }
+					}
+					AND = {
+						artist = 1
+						NOT = { artist = 2 }
+					}
+					AND = {
+						treasurer = 1
+						NOT = { treasurer = 2 }
+					}
+					AND = {
+						theologian = 1
+						NOT = { theologian = 2 }
+					}
+					AND = {
+						master_of_mint = 1
+						NOT = { master_of_mint = 2 }
+					}
+					AND = {
+						inquisitor = 1
+						NOT = { inquisitor = 2 }
+					}
+					AND = {
+						me_reformist = 1
+						NOT = { me_reformist = 2 }
+					}
+					AND = {
+						me_lyricist = 1
+						NOT = { me_lyricist = 2 }
+					}
+					AND = {
+						GRA_polymath = 1
+						NOT = { GRA_polymath = 2 }
+					}
+					AND = {
+						sufi_scholar_advisor = 1
+						NOT = { sufi_scholar_advisor = 2 }
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 5
+					}
+				}
+			}
+			set_country_flag = level_1_adm_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						philosopher = 2
+						NOT = { philosopher = 3 }
+					}
+					AND = {
+						natural_scientist = 2
+						NOT = { natural_scientist = 3 }
+					}
+					AND = {
+						artist = 2
+						NOT = { artist = 3 }
+					}
+					AND = {
+						treasurer = 2
+						NOT = { treasurer = 3 }
+					}
+					AND = {
+						theologian = 2
+						NOT = { theologian = 3 }
+					}
+					AND = {
+						master_of_mint = 2
+						NOT = { master_of_mint = 3 }
+					}
+					AND = {
+						inquisitor = 2
+						NOT = { inquisitor = 3 }
+					}
+					AND = {
+						me_reformist = 2
+						NOT = { me_reformist = 3 }
+					}
+					AND = {
+						me_lyricist = 2
+						NOT = { me_lyricist = 3 }
+					}
+					AND = {
+						GRA_polymath = 2
+						NOT = { GRA_polymath = 3 }
+					}
+					AND = {
+						sufi_scholar_advisor = 2
+						NOT = { sufi_scholar_advisor = 3 }
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 5
+					}
+				}
+			}
+			set_country_flag = level_2_adm_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						philosopher = 3
+						NOT = { philosopher = 4 }
+					}
+					AND = {
+						natural_scientist = 3
+						NOT = { natural_scientist = 4 }
+					}
+					AND = {
+						artist = 3
+						NOT = { artist = 4 }
+					}
+					AND = {
+						treasurer = 3
+						NOT = { treasurer = 4 }
+					}
+					AND = {
+						theologian = 3
+						NOT = { theologian = 4 }
+					}
+					AND = {
+						master_of_mint = 3
+						NOT = { master_of_mint = 4 }
+					}
+					AND = {
+						inquisitor = 3
+						NOT = { inquisitor = 4 }
+					}
+					AND = {
+						me_reformist = 3
+						NOT = { me_reformist = 4 }
+					}
+					AND = {
+						me_lyricist = 3
+						NOT = { me_lyricist = 4 }
+					}
+					AND = {
+						GRA_polymath = 3
+						NOT = { GRA_polymath = 4 }
+					}
+					AND = {
+						sufi_scholar_advisor = 3
+						NOT = { sufi_scholar_advisor = 4 }
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 5
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 4
+					}
+				}
+			}
+			set_country_flag = level_3_adm_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						philosopher = 4
+						NOT = { philosopher = 5 }
+					}
+					AND = {
+						natural_scientist = 4
+						NOT = { natural_scientist = 5 }
+					}
+					AND = {
+						artist = 4
+						NOT = { artist = 5 }
+					}
+					AND = {
+						treasurer = 4
+						NOT = { treasurer = 5 }
+					}
+					AND = {
+						theologian = 4
+						NOT = { theologian = 5 }
+					}
+					AND = {
+						master_of_mint = 4
+						NOT = { master_of_mint = 5 }
+					}
+					AND = {
+						inquisitor = 4
+						NOT = { inquisitor = 5 }
+					}
+					AND = {
+						me_reformist = 4
+						NOT = { me_reformist = 5 }
+					}
+					AND = {
+						me_lyricist = 4
+						NOT = { me_lyricist = 5 }
+					}
+					AND = {
+						GRA_polymath = 4
+						NOT = { GRA_polymath = 5 }
+					}
+					AND = {
+						sufi_scholar_advisor = 4
+						NOT = { sufi_scholar_advisor = 5 }
+					}
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 4
+					}
+				}
+				NOT = {
+					OR = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+						AND = {
+							is_variable_equal = {
+								which = adm_advisor_rehired_skill
+								value = 4
+							}
+							OR = {
+								AND = {
+									philosopher = 4
+									NOT = { philosopher = 5 }
+								}
+								AND = {
+									natural_scientist = 4
+									NOT = { natural_scientist = 5 }
+								}
+								AND = {
+									artist = 4
+									NOT = { artist = 5 }
+								}
+								AND = {
+									treasurer = 4
+									NOT = { treasurer = 5 }
+								}
+								AND = {
+									theologian = 4
+									NOT = { theologian = 5 }
+								}
+								AND = {
+									master_of_mint = 4
+									NOT = { master_of_mint = 5 }
+								}
+								AND = {
+									inquisitor = 4
+									NOT = { inquisitor = 5 }
+								}
+								AND = {
+									me_reformist = 4
+									NOT = { me_reformist = 5 }
+								}
+								AND = {
+									me_lyricist = 4
+									NOT = { me_lyricist = 5 }
+								}
+								AND = {
+									GRA_polymath = 4
+									NOT = { GRA_polymath = 5 }
+								}
+								AND = {
+									sufi_scholar_advisor = 4
+									NOT = { sufi_scholar_advisor = 5 }
+								}
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_4_adm_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						philosopher = 5
+						NOT = { philosopher = 6 }
+					}
+					AND = {
+						natural_scientist = 5
+						NOT = { natural_scientist = 6 }
+					}
+					AND = {
+						artist = 5
+						NOT = { artist = 6 }
+					}
+					AND = {
+						treasurer = 5
+						NOT = { treasurer = 6 }
+					}
+					AND = {
+						theologian = 5
+						NOT = { theologian = 6 }
+					}
+					AND = {
+						master_of_mint = 5
+						NOT = { master_of_mint = 6 }
+					}
+					AND = {
+						inquisitor = 5
+						NOT = { inquisitor = 6 }
+					}
+					AND = {
+						me_reformist = 5
+						NOT = { me_reformist = 6 }
+					}
+					AND = {
+						me_lyricist = 5
+						NOT = { me_lyricist = 6 }
+					}
+					AND = {
+						GRA_polymath = 5
+						NOT = { GRA_polymath = 6 }
+					}
+					AND = {
+						sufi_scholar_advisor = 5
+						NOT = { sufi_scholar_advisor = 6 }
+					}
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								philosopher = 4
+								NOT = { philosopher = 5 }
+							}
+							AND = {
+								natural_scientist = 4
+								NOT = { natural_scientist = 5 }
+							}
+							AND = {
+								artist = 4
+								NOT = { artist = 5 }
+							}
+							AND = {
+								treasurer = 4
+								NOT = { treasurer = 5 }
+							}
+							AND = {
+								theologian = 4
+								NOT = { theologian = 5 }
+							}
+							AND = {
+								master_of_mint = 4
+								NOT = { master_of_mint = 5 }
+							}
+							AND = {
+								inquisitor = 4
+								NOT = { inquisitor = 5 }
+							}
+							AND = {
+								me_reformist = 4
+								NOT = { me_reformist = 5 }
+							}
+							AND = {
+								me_lyricist = 4
+								NOT = { me_lyricist = 5 }
+							}
+							AND = {
+								GRA_polymath = 4
+								NOT = { GRA_polymath = 5 }
+							}
+							AND = {
+								sufi_scholar_advisor = 4
+								NOT = { sufi_scholar_advisor = 5 }
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_5_adm_advisor
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			set_country_flag = philosopher_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = natural_scientist
+			}
+			set_country_flag = natural_scientist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = artist
+			}
+			set_country_flag = artist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = treasurer
+			}
+			set_country_flag = treasurer_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = theologian
+			}
+			set_country_flag = theologian_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			set_country_flag = master_of_mint_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = inquisitor
+			}
+			set_country_flag = inquisitor_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = me_reformist
+			}
+			set_country_flag = me_reformist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = me_lyricist
+			}
+			set_country_flag = me_lyricist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = GRA_polymath
+			}
+			set_country_flag = GRA_polymath_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = sufi_scholar_advisor
+			}
+			set_country_flag = sufi_scholar_advisor_is_adm_advisor
+		}
+	}
+	else = {
+		clr_global_flag = refreshable_adm_advisor_hired@ROOT
+		clr_country_flag = adm_advisor_automatic_replace
+		clr_country_flag = level_1_adm_advisor
+		clr_country_flag = level_2_adm_advisor
+		clr_country_flag = level_3_adm_advisor
+		clr_country_flag = level_4_adm_advisor
+		clr_country_flag = level_5_adm_advisor
+		set_variable = {
+			which = adm_advisor_rehired_skill
+			value = 0
+		}
+		remove_country_modifier = ME_adm_rehired_advisor_4
+		remove_country_modifier = ME_adm_rehired_advisor_5
+	}
+}
+
+# this = country
+on_pre_dip_advisor_fired = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					advisor = statesman
+					advisor = naval_reformer
+					advisor = trader
+					advisor = spymaster
+					advisor = diplomat
+					advisor = colonial_governor
+					advisor = navigator
+					AND = {
+						advisor = travelling_merchant
+						has_country_flag = HNS_travelling_merchant
+					}
+				}
+			}
+		}
+		clr_country_flag = dip_advisor_automatic_replace
+	}
+	if = {
+		limit = {
+			has_country_flag = dip_advisor_automatic_replace
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						statesman = 1
+						NOT = { statesman = 2 }
+					}
+					AND = {
+						naval_reformer = 1
+						NOT = { naval_reformer = 2 }
+					}
+					AND = {
+						trader = 1
+						NOT = { trader = 2 }
+					}
+					AND = {
+						spymaster = 1
+						NOT = { spymaster = 2 }
+					}
+					AND = {
+						diplomat = 1
+						NOT = { diplomat = 2 }
+					}
+					AND = {
+						colonial_governor = 1
+						NOT = { colonial_governor = 2 }
+					}
+					AND = {
+						navigator = 1
+						NOT = { navigator = 2 }
+					}
+					AND = {
+						travelling_merchant = 1
+						NOT = { travelling_merchant = 2 }
+					}
+				}
+			}
+			set_country_flag = level_1_dip_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						statesman = 2
+						NOT = { statesman = 3 }
+					}
+					AND = {
+						naval_reformer = 2
+						NOT = { naval_reformer = 3 }
+					}
+					AND = {
+						trader = 2
+						NOT = { trader = 3 }
+					}
+					AND = {
+						spymaster = 2
+						NOT = { spymaster = 3 }
+					}
+					AND = {
+						diplomat = 2
+						NOT = { diplomat = 3 }
+					}
+					AND = {
+						colonial_governor = 2
+						NOT = { colonial_governor = 3 }
+					}
+					AND = {
+						navigator = 2
+						NOT = { navigator = 3 }
+					}
+					AND = {
+						travelling_merchant = 2
+						NOT = { travelling_merchant = 3 }
+					}
+				}
+			}
+			set_country_flag = level_2_dip_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						statesman = 3
+						NOT = { statesman = 4 }
+					}
+					AND = {
+						naval_reformer = 3
+						NOT = { naval_reformer = 4 }
+					}
+					AND = {
+						trader = 3
+						NOT = { trader = 4 }
+					}
+					AND = {
+						spymaster = 3
+						NOT = { spymaster = 4 }
+					}
+					AND = {
+						diplomat = 3
+						NOT = { diplomat = 4 }
+					}
+					AND = {
+						colonial_governor = 3
+						NOT = { colonial_governor = 4 }
+					}
+					AND = {
+						navigator = 3
+						NOT = { navigator = 4 }
+					}
+					AND = {
+						travelling_merchant = 3
+						NOT = { travelling_merchant = 4 }
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = dip_advisor_rehired_skill
+						value = 5
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = dip_advisor_rehired_skill
+						value = 4
+					}
+				}
+			}
+			set_country_flag = level_3_dip_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						statesman = 4
+						NOT = { statesman = 5 }
+					}
+					AND = {
+						naval_reformer = 4
+						NOT = { naval_reformer = 5 }
+					}
+					AND = {
+						trader = 4
+						NOT = { trader = 5 }
+					}
+					AND = {
+						spymaster = 4
+						NOT = { spymaster = 5 }
+					}
+					AND = {
+						diplomat = 4
+						NOT = { diplomat = 5 }
+					}
+					AND = {
+						colonial_governor = 4
+						NOT = { colonial_governor = 5 }
+					}
+					AND = {
+						navigator = 4
+						NOT = { navigator = 5 }
+					}
+					AND = {
+						travelling_merchant = 4
+						NOT = { travelling_merchant = 5 }
+					}
+					is_variable_equal = {
+						which = dip_advisor_rehired_skill
+						value = 4
+					}
+				}
+				NOT = {
+					OR = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+						AND = {
+							is_variable_equal = {
+								which = dip_advisor_rehired_skill
+								value = 4
+							}
+							OR = {
+								AND = {
+									statesman = 4
+									NOT = { statesman = 5 }
+								}
+								AND = {
+									naval_reformer = 4
+									NOT = { naval_reformer = 5 }
+								}
+								AND = {
+									trader = 4
+									NOT = { trader = 5 }
+								}
+								AND = {
+									spymaster = 4
+									NOT = { spymaster = 5 }
+								}
+								AND = {
+									diplomat = 4
+									NOT = { diplomat = 5 }
+								}
+								AND = {
+									colonial_governor = 4
+									NOT = { colonial_governor = 5 }
+								}
+								AND = {
+									navigator = 4
+									NOT = { navigator = 5 }
+								}
+								AND = {
+									travelling_merchant = 4
+									NOT = { travelling_merchant = 5 }
+								}
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_4_dip_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						statesman = 5
+						NOT = { statesman = 6 }
+					}
+					AND = {
+						naval_reformer = 5
+						NOT = { naval_reformer = 6 }
+					}
+					AND = {
+						trader = 5
+						NOT = { trader = 6 }
+					}
+					AND = {
+						spymaster = 5
+						NOT = { spymaster = 6 }
+					}
+					AND = {
+						diplomat = 5
+						NOT = { diplomat = 6 }
+					}
+					AND = {
+						colonial_governor = 5
+						NOT = { colonial_governor = 6 }
+					}
+					AND = {
+						navigator = 5
+						NOT = { navigator = 6 }
+					}
+					AND = {
+						travelling_merchant = 5
+						NOT = { travelling_merchant = 6 }
+					}
+					is_variable_equal = {
+						which = dip_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								statesman = 4
+								NOT = { statesman = 5 }
+							}
+							AND = {
+								naval_reformer = 4
+								NOT = { naval_reformer = 5 }
+							}
+							AND = {
+								trader = 4
+								NOT = { trader = 5 }
+							}
+							AND = {
+								spymaster = 4
+								NOT = { spymaster = 5 }
+							}
+							AND = {
+								diplomat = 4
+								NOT = { diplomat = 5 }
+							}
+							AND = {
+								colonial_governor = 4
+								NOT = { colonial_governor = 5 }
+							}
+							AND = {
+								navigator = 4
+								NOT = { navigator = 5 }
+							}
+							AND = {
+								travelling_merchant = 4
+								NOT = { travelling_merchant = 5 }
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_5_dip_advisor
+		}
+		if = {
+			limit = {
+				advisor = statesman
+			}
+			set_country_flag = statesman_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = naval_reformer
+			}
+			set_country_flag = naval_reformer_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = trader
+			}
+			set_country_flag = trader_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = spymaster
+			}
+			set_country_flag = spymaster_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = diplomat
+			}
+			set_country_flag = diplomat_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = colonial_governor
+			}
+			set_country_flag = colonial_governor_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = navigator
+			}
+			set_country_flag = navigator_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = travelling_merchant
+			}
+			set_country_flag = travelling_merchant_is_dip_advisor
+		}
+	}
+	else = {
+		clr_global_flag = refreshable_dip_advisor_hired@ROOT
+		clr_country_flag = dip_advisor_automatic_replace
+		clr_country_flag = level_1_dip_advisor
+		clr_country_flag = level_2_dip_advisor
+		clr_country_flag = level_3_dip_advisor
+		clr_country_flag = level_4_dip_advisor
+		clr_country_flag = level_5_dip_advisor
+		set_variable = {
+			which = dip_advisor_rehired_skill
+			value = 0
+		}
+		remove_country_modifier = ME_dip_rehired_advisor_4
+		remove_country_modifier = ME_dip_rehired_advisor_5
+	}
+}
+
+# this = country
+on_pre_mil_advisor_fired = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					advisor = army_reformer
+					advisor = army_organiser
+					advisor = commandant
+					advisor = quartermaster
+					advisor = recruitmaster
+					advisor = fortification_expert
+					advisor = grand_captain
+					AND = {
+						advisor = ME_mercenary_commander
+						has_country_flag = allow_ME_mercenary_commander
+					}
+				}
+			}
+		}
+		clr_country_flag = mil_advisor_automatic_replace
+	}
+	if = {
+		limit = {
+			has_country_flag = mil_advisor_automatic_replace
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						army_reformer = 1
+						NOT = { army_reformer = 2 }
+					}
+					AND = {
+						army_organiser = 1
+						NOT = { army_organiser = 2 }
+					}
+					AND = {
+						commandant = 1
+						NOT = { commandant = 2 }
+					}
+					AND = {
+						quartermaster = 1
+						NOT = { quartermaster = 2 }
+					}
+					AND = {
+						recruitmaster = 1
+						NOT = { recruitmaster = 2 }
+					}
+					AND = {
+						fortification_expert = 1
+						NOT = { fortification_expert = 2 }
+					}
+					AND = {
+						grand_captain = 1
+						NOT = { grand_captain = 2 }
+					}
+					AND = {
+						ME_mercenary_commander = 1
+						has_country_flag = allow_ME_mercenary_commander
+						NOT = { ME_mercenary_commander = 2 }
+					}
+				}
+			}
+			set_country_flag = level_1_mil_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						army_reformer = 2
+						NOT = { army_reformer = 3 }
+					}
+					AND = {
+						army_organiser = 2
+						NOT = { army_organiser = 3 }
+					}
+					AND = {
+						commandant = 2
+						NOT = { commandant = 3 }
+					}
+					AND = {
+						quartermaster = 2
+						NOT = { quartermaster = 3 }
+					}
+					AND = {
+						recruitmaster = 2
+						NOT = { recruitmaster = 3 }
+					}
+					AND = {
+						fortification_expert = 2
+						NOT = { fortification_expert = 3 }
+					}
+					AND = {
+						grand_captain = 2
+						NOT = { grand_captain = 3 }
+					}
+					AND = {
+						ME_mercenary_commander = 2
+						has_country_flag = allow_ME_mercenary_commander
+						NOT = { ME_mercenary_commander = 3 }
+					}
+				}
+			}
+			set_country_flag = level_2_mil_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						army_reformer = 3
+						NOT = { army_reformer = 4 }
+					}
+					AND = {
+						army_organiser = 3
+						NOT = { army_organiser = 4 }
+					}
+					AND = {
+						commandant = 3
+						NOT = { commandant = 4 }
+					}
+					AND = {
+						quartermaster = 3
+						NOT = { quartermaster = 4 }
+					}
+					AND = {
+						recruitmaster = 3
+						NOT = { recruitmaster = 4 }
+					}
+					AND = {
+						fortification_expert = 3
+						NOT = { fortification_expert = 4 }
+					}
+					AND = {
+						grand_captain = 3
+						NOT = { grand_captain = 4 }
+					}
+					AND = {
+						ME_mercenary_commander = 3
+						has_country_flag = allow_ME_mercenary_commander
+						NOT = { ME_mercenary_commander = 4 }
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = mil_advisor_rehired_skill
+						value = 5
+					}
+				}
+				NOT = {
+					is_variable_equal = {
+						which = mil_advisor_rehired_skill
+						value = 4
+					}
+				}
+			}
+			set_country_flag = level_3_mil_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						army_reformer = 4
+						NOT = { army_reformer = 5 }
+					}
+					AND = {
+						army_organiser = 4
+						NOT = { army_organiser = 5 }
+					}
+					AND = {
+						commandant = 4
+						NOT = { commandant = 5 }
+					}
+					AND = {
+						quartermaster = 4
+						NOT = { quartermaster = 5 }
+					}
+					AND = {
+						recruitmaster = 4
+						NOT = { recruitmaster = 5 }
+					}
+					AND = {
+						fortification_expert = 4
+						NOT = { fortification_expert = 5 }
+					}
+					AND = {
+						grand_captain = 4
+						NOT = { grand_captain = 5 }
+					}
+					AND = {
+						ME_mercenary_commander = 4
+						has_country_flag = allow_ME_mercenary_commander
+						NOT = { ME_mercenary_commander = 5 }
+					}
+					is_variable_equal = {
+						which = mil_advisor_rehired_skill
+						value = 4
+					}
+				}
+				NOT = {
+					OR = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+						AND = {
+							is_variable_equal = {
+								which = mil_advisor_rehired_skill
+								value = 4
+							}
+							OR = {
+								AND = {
+									army_reformer = 4
+									NOT = { army_reformer = 5 }
+								}
+								AND = {
+									army_organiser = 4
+									NOT = { army_organiser = 5 }
+								}
+								AND = {
+									commandant = 4
+									NOT = { commandant = 5 }
+								}
+								AND = {
+									quartermaster = 4
+									NOT = { quartermaster = 5 }
+								}
+								AND = {
+									recruitmaster = 4
+									NOT = { recruitmaster = 5 }
+								}
+								AND = {
+									fortification_expert = 4
+									NOT = { fortification_expert = 5 }
+								}
+								AND = {
+									grand_captain = 4
+									NOT = { grand_captain = 5 }
+								}
+								AND = {
+									ME_mercenary_commander = 4
+									has_country_flag = allow_ME_mercenary_commander
+									NOT = { ME_mercenary_commander = 5 }
+								}
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_4_mil_advisor
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						army_reformer = 5
+						NOT = { army_reformer = 6 }
+					}
+					AND = {
+						army_organiser = 5
+						NOT = { army_organiser = 6 }
+					}
+					AND = {
+						commandant = 5
+						NOT = { commandant = 6 }
+					}
+					AND = {
+						quartermaster = 5
+						NOT = { quartermaster = 6 }
+					}
+					AND = {
+						recruitmaster = 5
+						NOT = { recruitmaster = 6 }
+					}
+					AND = {
+						fortification_expert = 5
+						NOT = { fortification_expert = 6 }
+					}
+					AND = {
+						grand_captain = 5
+						NOT = { grand_captain = 6 }
+					}
+					AND = {
+						ME_mercenary_commander = 5
+						has_country_flag = allow_ME_mercenary_commander
+						NOT = { ME_mercenary_commander = 6 }
+					}
+					is_variable_equal = {
+						which = mil_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								army_reformer = 4
+								NOT = { army_reformer = 5 }
+							}
+							AND = {
+								army_organiser = 4
+								NOT = { army_organiser = 5 }
+							}
+							AND = {
+								commandant = 4
+								NOT = { commandant = 5 }
+							}
+							AND = {
+								quartermaster = 4
+								NOT = { quartermaster = 5 }
+							}
+							AND = {
+								recruitmaster = 4
+								NOT = { recruitmaster = 5 }
+							}
+							AND = {
+								fortification_expert = 4
+								NOT = { fortification_expert = 5 }
+							}
+							AND = {
+								grand_captain = 4
+								NOT = { grand_captain = 5 }
+							}
+							AND = {
+								ME_mercenary_commander = 4
+								has_country_flag = allow_ME_mercenary_commander
+								NOT = { ME_mercenary_commander = 5 }
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = level_5_mil_advisor
+		}
+		if = {
+			limit = {
+				advisor = army_reformer
+			}
+			set_country_flag = army_reformer_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = army_organiser
+			}
+			set_country_flag = army_organiser_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = commandant
+			}
+			set_country_flag = commandant_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = quartermaster
+			}
+			set_country_flag = quartermaster_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = recruitmaster
+			}
+			set_country_flag = recruitmaster_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = fortification_expert
+			}
+			set_country_flag = fortification_expert_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = grand_captain
+			}
+			set_country_flag = grand_captain_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				advisor = ME_mercenary_commander
+			}
+			set_country_flag = ME_mercenary_commander_is_mil_advisor
+		}
+	}
+	else = {
+		clr_global_flag = refreshable_mil_advisor_hired@ROOT
+		clr_country_flag = mil_advisor_automatic_replace
+		clr_country_flag = level_1_mil_advisor
+		clr_country_flag = level_2_mil_advisor
+		clr_country_flag = level_3_mil_advisor
+		clr_country_flag = level_4_mil_advisor
+		clr_country_flag = level_5_mil_advisor
+		set_variable = {
+			which = mil_advisor_rehired_skill
+			value = 0
+		}
+		remove_country_modifier = ME_mil_rehired_advisor_4
+		remove_country_modifier = ME_mil_rehired_advisor_5
+	}
+}
+
+# this = country
+on_post_adm_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = adm_advisor_automatic_replace
+		}
+		if = {
+			limit = { NOT = { has_country_flag = free_advisor_refreshing } }
+			set_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 1 type = adm }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 2 type = adm }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 3 type = adm }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 4 type = adm }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 5 type = adm }
+			}
+			clr_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = moneyAvailable
+							value = treasury
+						}
+						check_variable = { which = moneyAvailable which = advisor_base_hiring_cost }
+					}
+				}
+				variable_use_in_effect_effect = { effect = add_treasury variable = advisor_base_hiring_cost_subtract }
+				set_global_flag = refreshable_adm_advisor_hired@ROOT
+			}
+			else = {
+				clr_global_flag = refreshable_adm_advisor_hired@ROOT
+				clr_country_flag = adm_advisor_automatic_replace
+				clr_country_flag = level_1_adm_advisor
+				clr_country_flag = level_2_adm_advisor
+				clr_country_flag = level_3_adm_advisor
+				clr_country_flag = level_4_adm_advisor
+				clr_country_flag = level_5_adm_advisor
+				remove_country_modifier = ME_adm_rehired_advisor_4
+				remove_country_modifier = ME_adm_rehired_advisor_5
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = philosopher_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = philosopher
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = philosopher
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = philosopher
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = philosopher
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = philosopher
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = philosopher_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = natural_scientist_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = natural_scientist
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = natural_scientist
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = natural_scientist
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = natural_scientist
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = natural_scientist
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = natural_scientist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = artist_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = artist
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = artist
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = artist
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = artist
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = artist
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = artist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = treasurer_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = treasurer
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = treasurer
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = treasurer
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = treasurer
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = treasurer
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = treasurer_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = theologian_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = theologian
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = theologian
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = theologian
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = theologian
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = theologian
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = theologian_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = master_of_mint_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = master_of_mint
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = master_of_mint
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = master_of_mint
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = master_of_mint
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = master_of_mint
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = master_of_mint_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = inquisitor_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = inquisitor
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = inquisitor
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = inquisitor
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = inquisitor
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = inquisitor
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = inquisitor_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = me_reformist_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = me_reformist
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = me_reformist
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = me_reformist
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = me_reformist
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = me_reformist
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = me_reformist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = me_lyricist_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = me_lyricist
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = me_lyricist
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = me_lyricist
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = me_lyricist
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = me_lyricist
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = me_lyricist_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = GRA_polymath_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = GRA_polymath
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = GRA_polymath
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = GRA_polymath
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = GRA_polymath
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = GRA_polymath
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = GRA_polymath_is_adm_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = sufi_scholar_advisor_is_adm_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_adm_advisor
+				}
+				hire_advisor = {
+					type = sufi_scholar_advisor
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_adm_advisor
+				}
+				hire_advisor = {
+					type = sufi_scholar_advisor
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_adm_advisor
+				}
+				hire_advisor = {
+					type = sufi_scholar_advisor
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = sufi_scholar_advisor
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_adm_advisor
+				}
+				set_variable = {
+					which = adm_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = sufi_scholar_advisor
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = sufi_scholar_advisor_is_adm_advisor
+		}
+		remove_country_modifier = ME_adm_rehired_advisor_4
+		remove_country_modifier = ME_adm_rehired_advisor_5
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = {
+						which = adm_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = adm_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								philosopher = 4
+								NOT = { philosopher = 5 }
+							}
+							AND = {
+								natural_scientist = 4
+								NOT = { natural_scientist = 5 }
+							}
+							AND = {
+								artist = 4
+								NOT = { artist = 5 }
+							}
+							AND = {
+								treasurer = 4
+								NOT = { treasurer = 5 }
+							}
+							AND = {
+								theologian = 4
+								NOT = { theologian = 5 }
+							}
+							AND = {
+								master_of_mint = 4
+								NOT = { master_of_mint = 5 }
+							}
+							AND = {
+								inquisitor = 4
+								NOT = { inquisitor = 5 }
+							}
+							AND = {
+								me_reformist = 4
+								NOT = { me_reformist = 5 }
+							}
+							AND = {
+								me_lyricist = 4
+								NOT = { me_lyricist = 5 }
+							}
+							AND = {
+								GRA_polymath = 4
+								NOT = { GRA_polymath = 5 }
+							}
+							AND = {
+								sufi_scholar_advisor = 4
+								NOT = { sufi_scholar_advisor = 5 }
+							}
+						}
+					}
+				}
+			}
+			add_country_modifier = { 
+				name = ME_adm_rehired_advisor_5
+				duration = -1 
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = adm_advisor_rehired_skill
+					value = 4
+				}
+			}
+			add_country_modifier = { 
+				name = ME_adm_rehired_advisor_4
+				duration = -1 
+				hidden = yes
+			}
+		}
+		clr_country_flag = level_1_adm_advisor
+		clr_country_flag = level_2_adm_advisor
+		clr_country_flag = level_3_adm_advisor
+		clr_country_flag = level_4_adm_advisor
+		clr_country_flag = level_5_adm_advisor
+	}
+}
+
+# this = country
+on_post_dip_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = dip_advisor_automatic_replace
+		}
+		if = {
+			limit = { NOT = { has_country_flag = free_advisor_refreshing } }
+			set_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 1 type = dip }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 2 type = dip }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 3 type = dip }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 4 type = dip }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 5 type = dip }
+			}
+			clr_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = moneyAvailable
+							value = treasury
+						}
+						check_variable = { which = moneyAvailable which = advisor_base_hiring_cost }
+					}
+				}
+				set_global_flag = refreshable_dip_advisor_hired@ROOT
+				variable_use_in_effect_effect = { effect = add_treasury variable = advisor_base_hiring_cost_subtract }
+			}
+			else = {
+				clr_global_flag = refreshable_dip_advisor_hired@ROOT
+				clr_country_flag = dip_advisor_automatic_replace
+				clr_country_flag = level_1_dip_advisor
+				clr_country_flag = level_2_dip_advisor
+				clr_country_flag = level_3_dip_advisor
+				clr_country_flag = level_4_dip_advisor
+				clr_country_flag = level_5_dip_advisor
+				remove_country_modifier = ME_dip_rehired_advisor_4
+				remove_country_modifier = ME_dip_rehired_advisor_5
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = statesman_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = statesman
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = statesman
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = statesman
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = statesman
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = statesman
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = statesman_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = naval_reformer_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = naval_reformer
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = naval_reformer
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = naval_reformer
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = naval_reformer
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = naval_reformer
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = naval_reformer_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = trader_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = trader
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = trader
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = trader
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = trader
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = trader
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = trader_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = spymaster_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = spymaster
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = spymaster
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = spymaster
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = spymaster
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = spymaster
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = spymaster_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = diplomat_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = diplomat
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = diplomat
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = diplomat
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = diplomat
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = diplomat
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = diplomat_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = colonial_governor_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = colonial_governor
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = colonial_governor
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = colonial_governor
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = colonial_governor
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = colonial_governor
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = colonial_governor_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = navigator_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = navigator
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = navigator
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = navigator
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = navigator
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = navigator
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = navigator_is_dip_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = travelling_merchant_is_dip_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_dip_advisor
+				}
+				hire_advisor = {
+					type = travelling_merchant
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_dip_advisor
+				}
+				hire_advisor = {
+					type = travelling_merchant
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_dip_advisor
+				}
+				hire_advisor = {
+					type = travelling_merchant
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = travelling_merchant
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_dip_advisor
+				}
+				set_variable = {
+					which = dip_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = travelling_merchant
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = travelling_merchant_is_dip_advisor
+		}
+		remove_country_modifier = ME_dip_rehired_advisor_4
+		remove_country_modifier = ME_dip_rehired_advisor_5
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = {
+						which = dip_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = dip_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								statesman = 4
+								NOT = { statesman = 5 }
+							}
+							AND = {
+								naval_reformer = 4
+								NOT = { naval_reformer = 5 }
+							}
+							AND = {
+								trader = 4
+								NOT = { trader = 5 }
+							}
+							AND = {
+								spymaster = 4
+								NOT = { spymaster = 5 }
+							}
+							AND = {
+								diplomat = 4
+								NOT = { diplomat = 5 }
+							}
+							AND = {
+								colonial_governor = 4
+								NOT = { colonial_governor = 5 }
+							}
+							AND = {
+								navigator = 4
+								NOT = { navigator = 5 }
+							}
+							AND = {
+								travelling_merchant = 4
+								NOT = { travelling_merchant = 5 }
+							}
+						}
+					}
+				}
+			}
+			add_country_modifier = { 
+				name = ME_dip_rehired_advisor_5
+				duration = -1 
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = dip_advisor_rehired_skill
+					value = 4
+				}
+			}
+			add_country_modifier = { 
+				name = ME_dip_rehired_advisor_4
+				duration = -1 
+				hidden = yes
+			}
+		}
+		clr_country_flag = level_1_dip_advisor
+		clr_country_flag = level_2_dip_advisor
+		clr_country_flag = level_3_dip_advisor
+		clr_country_flag = level_4_dip_advisor
+		clr_country_flag = level_5_dip_advisor
+	}
+}
+
+# this = country
+on_post_mil_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = mil_advisor_automatic_replace
+		}
+		if = {
+			limit = { NOT = { has_country_flag = free_advisor_refreshing } }
+			set_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 1 type = mil }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 2 type = mil }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 3 type = mil }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 4 type = mil }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				ME_calculate_advisor_costs_effect = { skill_level = 5 type = mil }
+			}
+			clr_country_flag = no_choice_advisor_penalty
+			if = {
+				limit = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = moneyAvailable
+							value = treasury
+						}
+						check_variable = { which = moneyAvailable which = advisor_base_hiring_cost }
+					}
+				}
+				set_global_flag = refreshable_mil_advisor_hired@ROOT
+				variable_use_in_effect_effect = { effect = add_treasury variable = advisor_base_hiring_cost_subtract }
+			}
+			else = {
+				clr_global_flag = refreshable_mil_advisor_hired@ROOT
+				clr_country_flag = mil_advisor_automatic_replace
+				clr_country_flag = level_1_mil_advisor
+				clr_country_flag = level_2_mil_advisor
+				clr_country_flag = level_3_mil_advisor
+				clr_country_flag = level_4_mil_advisor
+				clr_country_flag = level_5_mil_advisor
+				remove_country_modifier = ME_mil_rehired_advisor_4
+				remove_country_modifier = ME_mil_rehired_advisor_5
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 0
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = army_reformer_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = army_reformer
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = army_reformer
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = army_reformer
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = army_reformer
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = army_reformer
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = army_reformer_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = army_organiser_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = army_organiser
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = army_organiser
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = army_organiser
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = army_organiser
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = army_organiser
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = army_organiser_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = commandant_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = commandant
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = commandant
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = commandant
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = commandant
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = commandant
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = commandant_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = quartermaster_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = quartermaster
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = quartermaster
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = quartermaster
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = quartermaster
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = quartermaster
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = quartermaster_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = recruitmaster_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = recruitmaster
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = recruitmaster
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = recruitmaster
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = recruitmaster
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = recruitmaster
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = recruitmaster_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = fortification_expert_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = fortification_expert
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = fortification_expert
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = fortification_expert
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = fortification_expert
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = fortification_expert
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = fortification_expert_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = grand_captain_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = grand_captain
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = grand_captain
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = grand_captain
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = grand_captain
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = grand_captain
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = grand_captain_is_mil_advisor
+		}
+		else_if = {
+			limit = {
+				has_country_flag = ME_mercenary_commander_is_mil_advisor
+			}
+			if = {
+				limit = {
+					has_country_flag = level_1_mil_advisor
+				}
+				hire_advisor = {
+					type = ME_mercenary_commander
+					skill = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_2_mil_advisor
+				}
+				hire_advisor = {
+					type = ME_mercenary_commander
+					skill = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_3_mil_advisor
+				}
+				hire_advisor = {
+					type = ME_mercenary_commander
+					skill = 3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_4_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+					}
+					hire_advisor = {
+						type = ME_mercenary_commander
+						skill = 3
+						cost_multiplier = 1.77777778 #level 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = level_5_mil_advisor
+				}
+				set_variable = {
+					which = mil_advisor_rehired_skill
+					value = 5
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 5
+						}
+					}
+					hire_advisor = {
+						type = ME_mercenary_commander
+						skill = 3
+						cost_multiplier = 2.77777778 #level 5
+					}
+				}
+			}
+			clr_country_flag = ME_mercenary_commander_is_mil_advisor
+		}
+		remove_country_modifier = ME_mil_rehired_advisor_4
+		remove_country_modifier = ME_mil_rehired_advisor_5
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = {
+						which = mil_advisor_rehired_skill
+						value = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = mil_advisor_rehired_skill
+							value = 4
+						}
+						OR = {
+							AND = {
+								army_reformer = 4
+								NOT = { army_reformer = 5 }
+							}
+							AND = {
+								army_organiser = 4
+								NOT = { army_organiser = 5 }
+							}
+							AND = {
+								commandant = 4
+								NOT = { commandant = 5 }
+							}
+							AND = {
+								quartermaster = 4
+								NOT = { quartermaster = 5 }
+							}
+							AND = {
+								recruitmaster = 4
+								NOT = { recruitmaster = 5 }
+							}
+							AND = {
+								fortification_expert = 4
+								NOT = { fortification_expert = 5 }
+							}
+							AND = {
+								grand_captain = 4
+								NOT = { grand_captain = 5 }
+							}
+							AND = {
+								ME_mercenary_commander = 4
+								has_country_flag = allow_ME_mercenary_commander
+								NOT = { ME_mercenary_commander = 5 }
+							}
+						}
+					}
+				}
+			}
+			add_country_modifier = { 
+				name = ME_mil_rehired_advisor_5
+				duration = -1 
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = mil_advisor_rehired_skill
+					value = 4
+				}
+			}
+			add_country_modifier = { 
+				name = ME_mil_rehired_advisor_4
+				duration = -1 
+				hidden = yes
+			}
+		}
+		clr_country_flag = level_1_mil_advisor
+		clr_country_flag = level_2_mil_advisor
+		clr_country_flag = level_3_mil_advisor
+		clr_country_flag = level_4_mil_advisor
+		clr_country_flag = level_5_mil_advisor
+	}
+}
+
+# ROOT = Overlord, FROM = Minor
+on_dependency_gained = {
+	#ME Stuff
+	ME_change_all_subject_colors = yes
+}
+
+# ROOT = New vassal, FROM = Overlord
+on_create_vassal = {
+	#ME Stuff
+	FROM = {
+		ME_change_all_subject_colors = yes
+	}
+}
+
+# THIS = New CS, FROM = Overlord
+on_create_client_state = {
+	#ME Stuff
+	FROM = {
+		ME_change_all_subject_colors = yes
+	}
+}
+
+# ROOT = Overlord, FROM = Minor
+on_dependency_lost = {
+	#ME Stuff
+	FROM = {
+		clr_country_flag = color_toggled_from_ui 
+		clr_country_flag = has_overriden_color_flag
+		if = {
+			limit = {
+				OR = {
+					is_former_colonial_nation = no
+					is_colonial_nation = no
+				}
+			}
+			restore_country_color = yes 
+		}
+	}
+	
+	if = { 
+        limit = { 
+            AND = {
+                ROOT = { has_country_modifier = me_hab_imperial_march }
+                FROM = { has_country_modifier = me_bra_new_march }
+            }
+        }
+        FROM = { remove_country_modifier = me_bra_new_march }
+        ROOT = { remove_country_modifier = me_hab_imperial_march }
+	}
+
+	if = {
+		limit = {
+			has_country_modifier = ee_spa_universal_empire
+			FROM = { tag = HAB }
+		}
+		ROOT = { 
+			remove_country_modifier = ee_spa_universal_empire
+		}
+	}
+	
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					tag = HUN
+					tag = BOH
+				}
+			}
+			ROOT = {
+				tag = HAB
+			}
+		}
+		FROM = { 
+			restore_country_color = yes
+			clr_country_flag = has_overriden_color_flag		 
+		}
+	}
+}
+
+# When a non-native changes government type
+on_government_change = {
+	#ME Stuff
+	if = {
+		limit = {
+			religion_group = muslim
+			NOT = { has_faction = caliphate_faction }
+		}
+		add_faction = caliphate_faction
+	}
+}
+
+on_reform_changed = {
+	#ME Stuff 
+	if = {
+		limit = {
+			religion_group = muslim
+			NOT = { has_faction = caliphate_faction }
+		}
+		add_faction = caliphate_faction
+	}
+}
+
+# country (country annexing, root = target)
+#on_diplomatic_annex = {
+#	#ME Stuff
+#	clr_country_flag = color_toggled_from_ui 
+#	clr_country_flag = has_overriden_color_flag
+#	restore_country_color = yes
+#}
+#
+## Nation is integrated after being in union
+#on_integrate = {
+#	#ME Stuff
+#	clr_country_flag = color_toggled_from_ui 
+#	clr_country_flag = has_overriden_color_flag
+#	restore_country_color = yes
+#}
+#
+#on_annexed = {
+#	#ME Stuff
+#	FROM = {
+#		clr_country_flag = color_toggled_from_ui 
+#		clr_country_flag = has_overriden_color_flag
+#		restore_country_color = yes 
+#	}
+#}

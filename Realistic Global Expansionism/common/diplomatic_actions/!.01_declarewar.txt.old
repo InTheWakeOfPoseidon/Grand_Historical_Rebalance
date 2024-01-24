@@ -1,0 +1,51 @@
+declarewar = {
+	condition = {
+		potential = {
+		}
+		allow = {
+            OR = {
+                ROOT = {
+					capital_scope = {
+						OR = {
+							superregion = africa_superregion
+							superregion = southern_africa_superregion
+						}
+					}
+                }
+                FROM = {
+                    OR = {
+						NOT = {
+							capital_scope = {
+								OR = {
+									region = niger_region
+									region = guinea_region
+									region = central_africa_region
+									region = sahel_region
+									region = horn_of_africa_region
+									region = east_africa_region
+									region = kongo_region
+									region = south_africa_region
+								}
+							}
+                        }
+						any_owned_province = {
+							OR = {
+								has_port = yes
+								NOT = {
+									region = niger_region
+									region = guinea_region
+									region = central_africa_region
+									region = sahel_region
+									region = horn_of_africa_region
+									region = east_africa_region
+									region = kongo_region
+									region = south_africa_region
+								}
+							}
+						}
+                    }
+                }
+            }
+		}
+	}
+}

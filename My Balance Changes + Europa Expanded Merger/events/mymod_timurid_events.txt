@@ -1,0 +1,106 @@
+namespace = Mymod_Timurid_Events
+
+country_event = {
+	id = Mymod_Timurid_Events.1
+	#Succession Crisis for all timurid princes.
+	title = ME_Timurid_Succession_Crisis_Events.1.t
+	desc = ME_Timurid_Succession_Crisis_Events.1.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		dynasty = "Timurid"
+		TIM = {
+			has_country_flag = me_tim_succession_crisis
+		}
+		NOT = { tag = TIM }
+		NOT = {
+			has_country_flag = mymod_tim_prince_succession_crisis
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 14
+	}
+	
+	major = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -30
+			}
+			add_stability = -3
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 2
+				}
+			}
+			EE_change_variable = {
+				which = timurid_legitimacy_value
+				subtract = 20
+			}
+			add_country_modifier = {
+				name = timurid_prince_disorder
+				duration = 7300
+			}	
+		
+		set_country_flag = mymod_tim_prince_succession_crisis
+
+		}
+	}
+
+	option = {
+		name = ME_Timurid_Succession_Crisis_Events.1.a #Start of Succession Crisis
+		
+		tooltip = {
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -30
+			}
+			add_stability = -3
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 2
+				}
+			}
+			add_country_modifier = {
+				name = timurid_prince_disorder
+				duration = 7300
+			}	
+		}
+	}
+}
+
+
+country_event = {
+	id = Mymod_Timurid_Events.2 #To remove cores from all Timurid provinces from Herat. It's necessary so that I can implement a collapse event for all Timurid princes and make them cede all foreign cores without turning Herat huge.
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = HER
+		has_country_flag = mymod_tim_becomes_herat
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		every_core_province = {
+			limit = {
+				NOT = {
+					owned_by = HER
+				}
+			}
+			remove_core = HER
+		}
+	}
+}

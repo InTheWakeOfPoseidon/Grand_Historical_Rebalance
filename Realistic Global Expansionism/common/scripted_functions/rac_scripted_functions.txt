@@ -1,0 +1,36 @@
+can_colonize_province = {
+	condition = {
+		tooltip = rac_african_colonization
+		potential = {
+			ROOT = {
+				OR = {
+					region = niger_region
+                    region = guinea_region
+                    region = central_africa_region
+                    region = sahel_region
+                    region = horn_of_africa_region
+                    region = east_africa_region
+                    region = kongo_region
+                    region = south_africa_region
+                }
+			}
+		}
+		allow = {
+			ROOT = {
+				AND = {
+					OR = {
+						region = niger_region
+						region = guinea_region
+						region = central_africa_region
+						region = sahel_region
+						region = horn_of_africa_region
+						region = east_africa_region
+						region = kongo_region
+						region = south_africa_region
+					}
+				has_port = yes
+				}
+			}
+		}
+	}
+}

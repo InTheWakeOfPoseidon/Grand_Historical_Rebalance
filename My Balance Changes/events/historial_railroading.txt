@@ -1,0 +1,108 @@
+namespace = railroading
+
+#A Habsburg Heir in Spain
+country_event = {
+	id = railroading.1
+	title = railroading.1.t
+	desc = railroading.1.d
+	picture = NEW_HEIR_eventPicture
+	hidden = yes 
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1550
+		ai = yes
+		has_government_attribute = heir
+		OR = {
+			tag = SPA
+			AND = {
+				tag = CAS
+				NOT = {
+					exists = SPA
+				}
+			}
+		}
+		NOT = { marriage_with = HAB }
+
+		NOT = {
+			dynasty = HAB
+		}
+		
+		NOT = {
+			war_with = HAB
+		}
+		
+		NOT = {
+			dynasty = FRA
+		}
+		
+		NOT = {
+			is_subject_of = FRA
+			alliance_with = FRA
+		}
+		
+		HAB = {
+			dynasty = "von Habsburg"
+			ai = yes
+			NOT = {
+				is_subject_of = FRA
+				alliance_with = FRA
+				war_with = ROOT
+			}
+		}
+		
+		FRA = {
+			ai = yes
+		}
+		
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		FRA = {
+			every_rival_country = {
+				limit = { NOT = { has_saved_event_target = FRA_rival_2 } }
+				save_event_target_as  = FRA_rival
+			}
+		}
+		FRA = {
+			every_rival_country = {
+				limit = { NOT = { has_saved_event_target = FRA_rival_1 } }
+				save_event_target_as  = FRA_rival_2
+			}
+		}
+	}
+	
+	option = {
+		name = "Yes."
+		ai_chance = {
+			factor = 100
+		}
+		name = railroading.1.a
+		force_remove_rival = HAB
+		create_marriage = HAB
+		add_rival = FRA
+		HAB = {
+			force_remove_rival = CAS
+			force_remove_rival = SPA
+			add_rival = FRA
+		}
+		FRA = {
+			remove_rival = event_target:FRA_rival_1
+			remove_rival = event_target:FRA_rival_2
+			add_rival = ROOT
+			add_rival = HAB
+		}
+	}
+	option = {
+		name = "Do nothing."
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 0
+	}
+}

@@ -1,0 +1,46 @@
+################
+#Culture Events#
+################
+
+namespace = american_begone
+
+#Remove the natives!
+country_event = {
+	id = american_begone.1
+	title = american_begone.1.t
+	desc = american_begone.1.d
+	picture = HUNTER_GATHERERS_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		always = no
+#		ai = no
+#		NOT = {
+#			government = native
+#		}
+	}
+
+	mean_time_to_happen = {
+		days = 1		
+	}
+	immediate = {
+		2025 = {
+			save_event_target_as = empty_wasteland
+		}
+	}
+	option = {
+		name = american_begone.1.a
+	}
+	option = {
+		name = american_begone.1.b
+		every_province = {
+			limit = {
+				owner = {
+					government = native
+				}
+			}
+			cede_province = event_target:empty_wasteland
+		}
+	}
+}

@@ -1,0 +1,106 @@
+#New Ming Events.
+#If Ming manages to triumph over the Oirat/Mongolia alliance and make Oirat a tributary, Mongolia automatically becomes a tributary too.
+#This prevents the weird situation where Mongolia cannot be made a tributary because it's a vassal of your tributary.
+
+namespace = new_ming_events
+
+###Mongolia subject transfer.
+
+country_event = {
+	id = new_ming_events.1
+	title = "new_ming_events.1.title"
+	desc = "new_ming_events.1.desc"
+	picture = GIFTS_TO_EMPEROR_eventPicture
+	major = yes
+	
+	immediate = { }
+	
+	fire_only_once = yes
+
+	is_triggered_only = no
+	
+	trigger = {
+		tag = MNG
+		current_age = age_of_discovery
+		OIR = {
+			NOT = {
+				has_country_flag = tumu_crisis_victory
+			}
+			is_subject_of = MNG
+		}
+		MNG = {
+			is_emperor_of_china = yes
+			}
+		KHA = {
+				exists = yes
+				is_subject_of = OIR
+			}
+		}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "new_ming_events.1.a"
+		create_subject = {
+			subject_type = tributary_state
+			subject = KHA
+		}
+		KHA = {
+			country_event = {
+				id = new_ming_events.2
+			}
+		}
+		OIR = {
+			country_event = {
+				id = new_ming_events.3
+			}
+		}
+	}
+}
+
+
+###Mongolia subject transfer - Mongolia event.
+
+country_event = {
+	id = new_ming_events.2
+	title = new_ming_events.2.title
+	desc = new_ming_events.2.desc
+	picture = GIFTS_TO_EMPEROR_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = new_ming_events.2.a
+		add_stability = -1
+		every_country = {
+			limit = {
+				is_subject_of_type = tributary_state
+				is_subject_of = MNG
+			}
+			add_truce_with = KHA
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+
+###Mongolia subject transfer - Oirat event.
+
+country_event = {
+	id = new_ming_events.3
+	title = new_ming_events.3.title
+	desc = new_ming_events.3.desc
+	picture = GIFTS_TO_EMPEROR_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = new_ming_events.3.a
+		add_stability = -1
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

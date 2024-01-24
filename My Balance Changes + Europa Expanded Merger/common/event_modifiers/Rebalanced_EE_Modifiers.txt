@@ -1,0 +1,51 @@
+#me_tim_babur_ai = {
+#	global_regiment_recruit_speed = -0.5
+#	global_manpower = 20
+#	land_forcelimit = 20
+#	shock_damage = 0.1
+#	global_regiment_cost = -0.5
+#	province_warscore_cost = -0.5
+#	core_creation = -0.25
+#	global_tax_income = 120
+#	ae_impact = -0.3
+#}
+
+ME_rise_of_babur = {
+	global_manpower = 10
+	land_forcelimit = 10
+	shock_damage = 0.1
+	global_regiment_cost = -0.33
+	province_warscore_cost = -0.33
+	core_creation = -0.25
+	global_tax_income = 60
+	ae_impact = -0.25
+}
+
+#ME_rise_of_babur_1 = {
+#	global_manpower = 10
+#	land_forcelimit = 10
+#	shock_damage = 0.1
+#	global_regiment_cost = -0.25
+#	province_warscore_cost = -0.33
+#	core_creation = -0.25
+#	global_tax_income = 60
+#	ae_impact = -0.2
+#	monarch_lifespan = 0.5
+#}
+
+timurid_prince_disorder = {
+	global_unrest = 10
+	all_estate_loyalty_equilibrium = -0.1
+}
+
+me_tim_babur_ai = {
+	global_regiment_recruit_speed = -0.5
+	global_manpower = 30
+	land_forcelimit = 30
+	global_regiment_cost = -0.5
+	province_warscore_cost = -0.5
+	core_creation = -0.2
+	global_tax_income = 60
+	ae_impact = -0.3
+	monarch_lifespan = 0.5
+}

@@ -1,0 +1,130 @@
+rac_modifier = {
+#	local_missionary_strength = -0.60
+	local_governing_cost = 1 
+	local_warscore_cost_modifier = 2 
+	picture = "ae_impact"
+}
+
+inner_arabia_modifier = {
+#	local_missionary_strength = -0.60
+	local_warscore_cost_modifier = 9
+	local_governing_cost = 3	
+	picture = "administrative_efficiency"
+}
+
+coastal_arabia_modifier = {
+#	local_missionary_strength = -0.60
+	local_warscore_cost_modifier = 2 
+	picture = "ae_impact"
+}
+
+caucasus_modifier = {
+	local_warscore_cost_modifier = 2 
+	picture = "ae_impact"
+}
+
+italy_modifier = {
+	local_warscore_cost_modifier = 1
+	picture = "ae_impact"
+}
+
+persia_modifier = {
+	local_warscore_cost_modifier = -0.5 
+	picture = "ae_impact"
+}
+
+tibet_modifier = {
+	local_warscore_cost_modifier = 4
+	local_governing_cost = 2
+	picture = "administrative_efficiency"
+}
+
+subsaharan_modifier = {
+	local_governing_cost = 2 
+	local_warscore_cost_modifier = 1
+	picture = "administrative_efficiency"
+}
+
+south_africa_modifier = {
+	local_governing_cost = 3 
+	local_warscore_cost_modifier = 3
+	picture = "administrative_efficiency"
+}
+
+sahel_modifier = {
+	local_governing_cost = 3 
+	local_warscore_cost_modifier = 1
+	picture = "administrative_efficiency"
+}
+
+horn_africa_modifier = {
+	local_governing_cost = 3 
+	local_warscore_cost_modifier = 2
+	picture = "administrative_efficiency"
+}
+
+central_asia_modifier = {
+	local_governing_cost = 2 
+	local_warscore_cost_modifier = 1
+	picture = "administrative_efficiency"
+}
+
+india_modifier = {
+	local_governing_cost = 1 
+	picture = "administrative_efficiency"
+}
+
+fragile_state_modifier = {
+	local_warscore_cost_modifier = -0.5 
+	picture = "ae_impact"
+}
+
+tarim_basin_modifier = {
+	local_warscore_cost_modifier = 1
+	local_governing_cost = 2
+	picture = "administrative_efficiency"
+}
+
+france_score_modifier = {
+	local_warscore_cost_modifier = 0.5
+	picture = "ae_impact"
+}
+
+iberia_score_modifier = {
+	local_warscore_cost_modifier = 0.5
+	picture = "ae_impact"
+}
+
+england_score_modifier = {
+	local_warscore_cost_modifier = 0.5
+	picture = "ae_impact"
+}
+
+
+crimea_score_modifier = {
+	local_warscore_cost_modifier = 1
+	picture = "ae_impact"
+}
+
+korea_modifier = {
+	local_governing_cost = 3 
+	local_warscore_cost_modifier = 2
+	picture = "administrative_efficiency"
+}
+
+japan_modifier = {
+	local_governing_cost = 2 
+	local_warscore_cost_modifier = 1
+	picture = "administrative_efficiency"
+}
+
+vietnam_modifier = {
+	local_governing_cost = 3 
+	local_warscore_cost_modifier = 2
+	picture = "administrative_efficiency"
+}
+
+sahara_institutions_modifier = {
+	local_institution_spread = -0.75
+	picture = "local_institution_spread"
+}

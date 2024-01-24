@@ -1,0 +1,10 @@
+####ManchuDecisions
+#Reduced number of required provinces to form Manchu from 20 to 18, might reduce it further if Manchu keeps failing to show up.
+#No longer needs a random border province in Mongolia (723, Xilin Gol) to form Qing.
+#Forming Qing gives 300 of each mana type to help it catch up in tech.
+####JapaneseNation
+#Japan now gets a unique government type (United Shogunate) upon uniting the country.
+####RussianNation
+#Now gives Russia 300 of each mana to help it catch up in tech.
+####TheCommonwealth
+#No longer requires Danzig and Marienburg to form it.

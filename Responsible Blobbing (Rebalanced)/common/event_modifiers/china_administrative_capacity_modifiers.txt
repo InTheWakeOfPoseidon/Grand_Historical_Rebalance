@@ -1,0 +1,20 @@
+mng_starting_malus_5_modifier = {
+	min_autonomy = 25
+	state_governing_cost = -0.2
+}
+mng_starting_malus_4_modifier = {
+	min_autonomy = 20
+	state_governing_cost = -0.16
+}
+mng_starting_malus_3_modifier = {
+	min_autonomy = 15
+	state_governing_cost = -0.12
+}
+mng_starting_malus_2_modifier = {
+	min_autonomy = 10
+	state_governing_cost = -0.08
+}
+mng_starting_malus_1_modifier = {
+	min_autonomy = 5
+	state_governing_cost = -0.04
+}

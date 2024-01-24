@@ -1,0 +1,13 @@
+########################################
+# Rebalanced Technology Spread
+########################################
+
+social_conservatism_title = {
+
+	trigger = {
+		is_revolutionary = no
+	}
+	
+	global_institution_spread = -0.33
+
+}

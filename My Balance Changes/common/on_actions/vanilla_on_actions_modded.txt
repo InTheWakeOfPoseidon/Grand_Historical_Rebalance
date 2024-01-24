@@ -1,0 +1,275 @@
+# province
+# root = location, from = losing country
+on_siege_won_province = {
+	events = {
+		chinese_unification.1		#changed by chinese unification
+		chinese_unification.2
+	}
+}
+
+# When a nation gains the Mandate of Heaven (becomes the Emperor of China)
+# FROM = Old Emperor, ROOT = New Emperor
+on_mandate_of_heaven_gained = {
+
+	add_country_modifier = {
+		name = new_mandate_holder
+		duration = 18250
+	}
+	
+	if = { 
+		limit = { tag =	MCH }  
+		change_country_color = { color = { 237  152  18 } } #Restore Qing color if somehow lost.
+	}
+	
+	if = { 
+		limit = { tag =	QNG }  
+		change_country_color = { color = { 237  152  18 } } #Restore Qing color if somehow lost.
+	}
+	
+	if = { 
+		limit = { tag =	MNG } 
+		change_country_color = { color = { 255  220  20 } } #Restore Ming color if somehow lost.
+	}
+	
+	if = { 
+		limit = { tag =	DAI } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for Dai Viet.
+	}
+
+	if = { 
+		limit = { tag =	MIN } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	YUE } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	SHU } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	NNG } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CHC } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	TNG } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	WUU } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	QIC } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	YAN } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	JIN } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	LNG } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	QIN } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	HUA } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CGS } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+
+	if = { 
+		limit = { tag =	CZH } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CSH } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CXI } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	FRM } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CDL } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CYI } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+	if = { 
+		limit = { tag =	CMI } 
+		change_country_color = { color = { 255  220  20 } } #Imperial color for revolter tag.
+	}
+	
+}
+
+# When a nation loses the Mandate of Heaven
+# FROM = New Emperor, ROOT = Old Emperor
+on_mandate_of_heaven_lost = {
+	
+	if = { 
+		limit = { tag =	MNG } 
+		change_country_color = { color = { 179  128  104 } } #Change to dull vanilla color
+	}
+	
+	if = { 
+		limit = { tag = QNG } 
+		change_country_color = { color = { 165  132  57 } } #Change to Manchu color
+	}
+	
+	if = { 
+		limit = { tag = MCH } 
+		restore_country_color = yes #Change to Manchu color
+	}
+	
+	if = { 
+		limit = { tag = DAI } 
+		restore_country_color = yes #Change to Dai Viet color
+	}
+		
+	if = { 
+		limit = { tag =	MIN } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	YUE } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	SHU } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	NNG } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CHC } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	TNG } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	WUU } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	QIC } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	YAN } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	JIN } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	LNG } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	QIN } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	HUA } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CGS } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CZH } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CSH } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CXI } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	FRM } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CDL } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CYI } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+	if = { 
+		limit = { tag =	CMI } 
+		restore_country_color = yes #Revert revolter tag to default color
+	}
+	
+}

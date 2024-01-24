@@ -1,0 +1,33 @@
+
+##########Provinces
+
+#Provinces: Big local autonomy increase for Mamluks, Poland, Lithuania, Aqq Qoyunlu and Timurids.
+#Areas affected: Mamluks = Levant. Poland = Ruthenia. Lithuania = Ruthenia. Aqq Qoyunlu = Iraq, non-turkic regions. Timurids #Most of the country outside Khorasan.
+#Tashkent, Shymkent and Bukhara are now Uzbek cores at the start of the game.
+#Most provinces around Samarkand have cores for a new tag (Samarkand, MM1) that exists mostly so that Transoxania can collapse.
+#1877, 4392, 192: All provinces in the Burgundy region but outside the HRE. Given as cores to France to foster French hostility towards Burgundy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+######Countries
+#Added inwards perfection clergy estate privilege to Ming, Dai Viet and Korea.
+#Made Aqq Qoyunlu and Qara Qoyunly historical rivals.
+#Made Castile and Aragon historical friends.
+#Made Ethiopia start as government rank 2 instead of 3.
+#Changed estate land distribution in Lithuania, Mamluks and Poland. All countries now get more land ownership by nobles at the start.
+#All Manchu states (EJZ, MHX, MJZ, MYR and NHX) start with the Larger tribal host tribes estate privilege. Haixi and Jianzhou additionally get the secure succession privilege. Jianzhou alone gets primary of the bannermen privilege aswell.
+#Finetuned the estate land share for Ming a lot. It makes no sense in vanilla that Nobles have 0 land while Burghers have a lot. Doesn't feel representative of Imperial China at all.		
+#Added varna_allies opinion modifier to from all countries to all countries in this list: BOH, BOS, CRO, HUN, LIT, POL, SER, WAL. Should stop them from warring early on and will instead make them more likely to fight together.
+#Increased Ming's starting crownland to 20. It's actually insane how awful Ming's start is, it's ahistorical and makes Ming ridiculously weak.
+#Gave Oirat's starting ruler a new modifier (esenchoros_empire) that lets Oirat automatically keep Mongolia under control until the death of Esen Choros.
+#Gave Oirat's starting ruler bold_fighter_personality as an early game military buff.

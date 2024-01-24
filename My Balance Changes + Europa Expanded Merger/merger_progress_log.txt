@@ -1,0 +1,59 @@
+UNFINISHED FOLDERS 19-12-2023:
+
+
+
+
+
+
+
+CONFIRMED FINISHED 19-12-2023 (FREEZING DEVELOPMENT ON MYBALANCECHANGES ON THIS DATE UNTIL DONE):
+Missions
+Events
+
+cb_types
+defines
+disasters
+estate_privileges
+estates
+government_ranks
+event_modifiers
+governments
+localisation
+government_mechanics
+on_actions
+opinion_modifiers
+static_modifiers
+triggered_modifiers
+wargoal_types
+history/provinces
+history/countries
+decisions
+government_reforms
+ideas
+
+countries (for MY COUNTRY COLORS mod): zero file overlap between my country colors and europa expanded.
+
+FINISHED MISC:
+Descriptor
+Folder names
+
+
+SECONDARY MODS:
+Responsible Blobbing:
+-Only needed the static modifier for corruption to be merged. Nothing else overlaps.
+
+Realistic African colonization:
+-No overlap.
+
+Decisive battles:
+-No overlap. On_actions are additive, rest of the mod is additive modifiers and events.
+
+Responsible Warfare:
+-on_action on_mercenary_recruitment merged.
+-nevermind, on_actions don't need to be merged ever.
+
+No bordergore:
+ME had new ruler personalities, need the "avoid bordergore" trait added.
+
+Rebalanced technology spread: 
+-No overlaps, mod consists entirely of additive triggered modifiers.

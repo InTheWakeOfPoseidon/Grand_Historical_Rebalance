@@ -1,0 +1,362 @@
+declarewar = {
+#########Subsaharan Africa Isolator#########
+	condition = {
+	tooltip = rac_african_war
+		potential = {
+			FROM = {
+				capital_scope = {
+					OR = {
+						region = niger_region
+						region = guinea_region
+						region = central_africa_region
+						region = sahel_region
+						region = horn_of_africa_region
+						region = east_africa_region
+						region = kongo_region
+						region = south_africa_region
+					}
+				}
+            }
+		}
+		allow = {
+            OR = {
+                ROOT = {
+					AND = {
+						capital_scope = {
+							OR = {
+								superregion = africa_superregion
+								superregion = southern_africa_superregion
+							}
+						}
+						OR = {
+							culture_group = maghrebi
+							culture_group = sahelian
+							culture_group = mande
+							culture_group = west_african
+							culture_group = sudanese
+							culture_group = cushitic
+							culture_group = kongo_group
+							culture_group = great_lakes_group
+							culture_group = african
+							culture_group = southern_african
+						}
+					}
+                }
+                FROM = {
+					any_owned_province = {
+						OR = {
+							has_port = yes
+							NOT = {
+								region = niger_region
+								region = guinea_region
+								region = central_africa_region
+								region = sahel_region
+								region = horn_of_africa_region
+								region = east_africa_region
+								region = kongo_region
+								region = south_africa_region
+							}
+						}
+					}
+                }
+            }
+		}
+	}
+#########Arabian Desert Isolator#########
+	condition = {
+		potential = {
+			ROOT = { ai = yes }
+			FROM = {
+				capital_scope = {
+					OR = {
+						area = nafud_area
+						area = qasim_area
+						area = yamamah_area
+					}
+				}
+            }
+		}
+		allow = {
+            OR = {
+                ROOT = {
+					AND = {
+						capital_scope = {
+							OR = {
+							area = nafud_area
+							area = qasim_area
+							area = yamamah_area
+							}
+						}
+						primary_culture = bedouin_arabic
+					}
+                }
+                FROM = {
+					any_owned_province = {
+						OR = {
+							has_port = yes
+							NOT = {
+								area = nafud_area
+								area = qasim_area
+								area = yamamah_area
+							}
+						}
+					}
+                }
+            }
+		}
+	}
+#########Tibet Isolator#########
+	condition = {
+		potential = {
+			ROOT = { ai = yes }
+			FROM = {
+				capital_scope = {
+					OR = {
+						area = nepal_area
+						area = utsang_area
+						area = tsang_area
+						area = kham_area
+						area = bhutan_area
+						area = ngari_area
+						province_id = 2074
+						province_id = 2073
+						province_id = 4521
+						province_id = 2134
+						province_id = 705
+					}
+				}
+            }
+		}
+		allow = {
+            OR = {
+                ROOT = {
+					AND = {
+						capital_scope = {
+							OR = {
+								area = nepal_area
+								area = utsang_area
+								area = tsang_area
+								area = kham_area
+								area = bhutan_area
+								area = ngari_area
+								province_id = 2074
+								province_id = 2073
+								province_id = 4521
+								province_id = 2134
+								province_id = 705
+							}
+						}
+						culture_group = tibetan_group
+					}
+                }
+                FROM = {
+					any_owned_province = {
+						OR = {
+							has_port = yes
+							NOT = {
+								area = nepal_area
+								area = utsang_area
+								area = tsang_area
+								area = kham_area
+								area = bhutan_area
+								area = ngari_area
+								province_id = 2074
+								province_id = 2073
+								province_id = 4521
+								province_id = 2134
+								province_id = 705
+							}
+						}
+					}
+                }
+            }
+		}
+	}
+#########Indian AI controller#########
+	condition = {
+		potential = {
+			ROOT = { ai = yes }
+			ROOT = {
+				capital_scope = {
+					superregion = india_superregion
+				}
+			}
+			FROM = {
+				capital_scope = {
+					OR = {
+						NOT = {
+							superregion = east_indies_superregion
+							superregion = india_superregion
+							superregion = persia_superregion
+						}
+					}
+				}
+            }
+		}
+		allow = {
+			FROM = {
+				any_owned_province = {
+					OR = {
+						superregion = east_indies_superregion
+						superregion = india_superregion
+						superregion = persia_superregion
+					}					
+				}
+			}
+		}
+	}
+#########East Indies AI controller#########
+	condition = {
+		potential = {
+			ROOT = { ai = yes }
+			ROOT = {
+				capital_scope = {
+					superregion = east_indies_superregion
+				}
+			}
+			FROM = {
+				capital_scope = {
+					OR = {
+						NOT = {
+							superregion = east_indies_superregion
+							superregion = india_superregion
+							superregion = oceania_superregion
+						}
+					}
+				}
+            }
+		}
+		allow = {
+			FROM = {
+				any_owned_province = {
+					OR = {
+						superregion = east_indies_superregion
+						superregion = india_superregion
+						superregion = oceania_superregion
+					}					
+				}
+			}
+		}
+	}
+#########Korea AI controller (ULTRA-ISOLATIONISM... ACTIVATED)#########
+	condition = {
+		potential = {
+			ROOT = { ai = yes }
+			ROOT = {
+				capital_scope = {
+					region = korea_region
+				}
+			}
+			FROM = {
+				capital_scope = {
+					NOT = {
+						region = korea_region
+					}
+				}
+            }
+		}
+		allow = {
+			FROM = {
+				any_owned_province = {
+					OR = {
+						region = korea_region
+					}					
+				}
+			}
+		}
+	}
+	######### Maghreb AI controller#########
+	condition = {
+		potential = {
+			ROOT = {
+				ai = yes
+				tag = MOR
+			}
+			FROM = {
+				capital_scope = {
+					OR = {
+						region = niger_region
+						region = guinea_region
+						area = darfur_central_sahara_area
+						area = kanem_area
+						area = bornu_area
+						area = azbin_area
+						area = kurdufan_area
+						area = dendi_area
+						area = east_azbin_area
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					ai = no
+				}
+				FROM = {
+					any_owned_province = {
+						OR = {
+							NOT = {
+								region = niger_region
+								region = guinea_region
+								area = darfur_central_sahara_area
+								area = kanem_area
+								area = bornu_area
+								area = azbin_area
+								area = kurdufan_area
+								area = dendi_area
+								area = east_azbin_area
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	######### Horn of Africa AI controller#########
+	condition = {
+		potential = {
+			ROOT = {
+				ai = yes
+				capital_scope = {
+					region = horn_of_africa_region
+				}
+			}
+			FROM = {
+				capital_scope = {
+					OR = {
+						region = niger_region
+						region = guinea_region
+						region = central_africa_region
+						region = sahel_region
+						region = east_africa_region
+						region = kongo_region
+						region = south_africa_region
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					ai = no
+				}
+				FROM = {
+					any_owned_province = {
+						OR = {
+							NOT = {
+								region = niger_region
+								region = guinea_region
+								region = central_africa_region
+								region = sahel_region
+								region = east_africa_region
+								region = kongo_region
+								region = south_africa_region
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

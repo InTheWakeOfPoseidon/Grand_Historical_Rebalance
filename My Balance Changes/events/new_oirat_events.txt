@@ -1,0 +1,47 @@
+# Oirat events
+#Grant independence on Mongolia is buggy. If it's player-controlled the event seems to annex them instead.
+
+namespace = me_oirat_events
+#
+#
+#country_event = {
+#	id = me_oirat_events.1
+#	title = "me_oirat_events.1.title"
+#	desc = "me_oirat_events.1.desc"
+#	picture = PALACE_eventPicture
+#	major = yes
+#	
+#	immediate = { }
+#	
+#	fire_only_once = yes
+#
+#	is_triggered_only = no
+#	
+#	trigger = {
+#		tag = OIR
+#		NOT = {
+#			has_country_flag = tumu_crisis_victory
+#		}
+#		MNG = {
+#			is_emperor_of_china = yes
+#		}
+#		is_subject_of = MNG
+#		KHA = {
+#			exists = yes
+#			is_subject_of = OIR
+#			liberty_desire = 50
+#		}
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 6
+#	}
+#
+#	option = {
+#		name = "me_oirat_events.1.a"
+#		KHA = {
+#			grant_independence = yes
+#		}
+#		add_horde_unity = -50
+#	}
+#}

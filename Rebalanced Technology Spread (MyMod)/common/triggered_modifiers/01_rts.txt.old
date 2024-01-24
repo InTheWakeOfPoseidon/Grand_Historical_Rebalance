@@ -1,0 +1,163 @@
+########################################
+# Rebalanced Technology Spread
+########################################
+
+eastern_tech_mod = {
+
+	trigger = {
+		technology_group = eastern
+	}
+	
+	global_institution_spread = -0.20
+	embracement_cost = 0.12
+}
+
+ottoman_tech_mod = {
+
+	trigger = {
+		technology_group = ottoman
+	}
+	
+	global_institution_spread = -0.25
+	embracement_cost = 0.15
+}
+
+muslim_tech_mod = {
+
+	trigger = {
+		technology_group = muslim
+	}
+	
+	global_institution_spread = -0.375
+	embracement_cost = 0.44
+}
+
+indian_tech_mod = {
+
+	trigger = {
+		technology_group = indian
+	}
+	
+	global_institution_spread = -0.40
+	embracement_cost = 0.60
+}
+
+east_african_tech_mod = {
+
+	trigger = {
+		technology_group = east_african
+	}
+	
+	global_institution_spread = -0.45
+	embracement_cost = 0.73
+}
+
+central_african_tech_mod = {
+
+	trigger = {
+		technology_group = central_african
+	}
+	
+	global_institution_spread = -0.55
+	embracement_cost = 1.42
+}
+
+chinese_tech_mod = {
+
+	trigger = {
+		technology_group = chinese
+	}
+	
+	global_institution_spread = -0.50
+	embracement_cost = 0.76
+}
+
+nomad_group_tech_mod = {
+
+	trigger = {
+		technology_group = nomad_group
+	}
+	
+	global_institution_spread = -0.625
+	embracement_cost = 1.45
+}
+
+sub_saharan_tech_mod = {
+
+	trigger = {
+		technology_group = sub_saharan
+	}
+	
+	global_institution_spread = -0.50
+	embracement_cost = 1.36
+}
+
+north_american_tech_mod = {
+
+	trigger = {
+		technology_group = north_american
+	}
+	
+	global_institution_spread = -0.925
+	embracement_cost = 2.5
+}
+
+mesoamerican_tech_mod = {
+
+	trigger = {
+		technology_group = mesoamerican
+	}
+	
+	global_institution_spread = -0.75
+	embracement_cost = 1.9
+}
+
+south_american_tech_mod = {
+
+	trigger = {
+		technology_group = south_american
+	}
+	
+	global_institution_spread = -0.925
+	embracement_cost = 2.5
+}
+
+andean_tech_mod = {
+
+	trigger = {
+		technology_group = andean
+	}
+	
+	global_institution_spread = -0.75
+	embracement_cost = 1.9
+}
+
+aboriginal_tech_tech_mod = {
+
+	trigger = {
+		technology_group = aboriginal_tech
+	}
+	
+	global_institution_spread = -0.925
+	embracement_cost = 2.5
+}
+
+polynesian_tech_tech_mod = {
+
+	trigger = {
+		technology_group = polynesian_tech
+	}
+	
+	global_institution_spread = -0.925
+	embracement_cost = 2.5
+}
+
+high_american_tech_mod = {
+
+	trigger = {
+		technology_group = high_american
+	}
+	
+	global_institution_spread = 0.25
+	embracement_cost = -0.9
+}

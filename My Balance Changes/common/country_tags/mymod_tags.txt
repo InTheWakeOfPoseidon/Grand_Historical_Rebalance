@@ -1,0 +1,2 @@
+MM1 = "countries/Samarkand.txt"
+MM2 = "countries/Tashkent.txt"

@@ -1,0 +1,22 @@
+406, 409, 410, 2310, 2311, 2312, 4291
+
+Provinces from Europa Expanded: Are they on my mod?
+387 no
+388 no
+390 no
+406 yes
+409 yes
+410 yes
+578 no
+2209 no
+2310 yes
+2311 yes
+2312 yes
+2344 no
+2345 no
+2346 no
+2472 no
+4279 no
+4280 no
+4281 no
+4291 yes

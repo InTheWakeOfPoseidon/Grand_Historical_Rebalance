@@ -1,0 +1,25 @@
+severe_winter = {
+	local_hostile_attrition = 3
+	supply_limit_modifier = -0.3
+	migration_cost = 0.2
+	local_colonial_growth = -200 			#Added Realism for Colonies being wiped out by winter storms
+	
+	picture = "winter_severe"
+}
+
+crown_colony_subject = {
+	global_autonomy = -0.1
+	global_colonial_growth = 10
+	global_manpower_modifier = -0.75 	# Lowered Manpower for colonies
+	land_forcelimit_modifier = -0.75	# Lowered land force limit for colonies
+	naval_forcelimit_modifier = -0.75	# Lowered naval force limit for colonies
+}
+
+self_governing_colony_subject = {	# Removed colonist provided to slow growth
+			  
+	development_cost = -0.15
+	liberty_desire = 25
+	global_manpower_modifier = -0.75	# Lowered Manpower for colonies
+	land_forcelimit_modifier = -0.75	# Lowered land force limit for colonies
+	naval_forcelimit_modifier = -0.75	# Lowered naval force limit for colonies
+}

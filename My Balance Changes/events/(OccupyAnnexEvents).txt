@@ -1,0 +1,131 @@
+namespace = chinese_unification
+
+province_event = {
+	id = chinese_unification.1
+	title = chinese_unification.1.t
+	desc = { }
+	picture = SIEGE_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		controller = {
+			OR = {
+				has_government_attribute = has_unify_china_cb
+				culture_group = east_asian
+			}
+			OR = {
+					is_in_war = {
+						attacker_leader = this
+						casus_belli = cb_chinese_unification
+					}
+					is_in_war = {
+						defender_leader = this
+						casus_belli = cb_chinese_unification
+					}
+			}
+		}
+		superregion = china_superregion
+		is_capital = no
+		owner = {
+			OR = {
+					is_in_war = {
+						attacker_leader = this
+						casus_belli = cb_chinese_unification
+					}
+					is_in_war = {
+						defender_leader = this
+						casus_belli = cb_chinese_unification
+					}
+			}
+			OR = {
+				has_government_attribute = has_unify_china_cb
+				culture_group = east_asian
+			}
+		}			
+	}
+	
+	immediate = {
+		hidden_effect = {
+			cede_province = controller
+			add_core = controller
+			remove_loot = {
+				who = ROOT
+				amount = 100
+			}
+			add_devastation = 2			
+		}
+	}
+	option = {
+		name = "chinese_unification.1.a"
+		tooltip = {
+			cede_province = controller
+			add_core = controller
+		}
+	}
+}
+
+province_event = {
+	id = chinese_unification.2
+	title = chinese_unification.2.t
+	desc = { }
+	picture = SIEGE_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		controller = {
+			OR = {
+				has_government_attribute = has_unify_china_cb
+				culture_group = east_asian
+			}
+			OR = {
+					is_in_war = {
+						attacker_leader = this
+						casus_belli = cb_chinese_unification
+					}
+					is_in_war = {
+						defender_leader = this
+						casus_belli = cb_chinese_unification
+					}
+			}
+		}
+		superregion = china_superregion
+		is_capital = yes
+		owner = {
+			OR = {
+					is_in_war = {
+						attacker_leader = this
+						casus_belli = cb_chinese_unification
+					}
+					is_in_war = {
+						defender_leader = this
+						casus_belli = cb_chinese_unification
+					}
+			}
+			OR = {
+				has_government_attribute = has_unify_china_cb
+				culture_group = east_asian
+			}
+		}			
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_core = controller
+			remove_loot = {
+				who = ROOT
+				amount = 100
+			}
+			add_devastation = 2				
+		}
+	}
+	option = {
+		name = "chinese_unification.a"
+		tooltip = {
+			add_core = controller
+		}
+	}
+}
+
+

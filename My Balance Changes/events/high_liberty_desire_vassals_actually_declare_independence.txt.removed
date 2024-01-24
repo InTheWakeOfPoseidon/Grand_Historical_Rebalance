@@ -1,0 +1,84 @@
+ namespace = hldvdw_events
+ 
+ country_event = {
+ 	id = hldvdw_events.1
+ 	title = hldvdw_events.1.t
+ 	desc = hldvdw_events.1.d
+ 	picture = DECLARATION_INDEPENDENCE_eventPicture
+ 	hidden = yes #Added for MyBalanceChanges mod.
+ 	
+ 	trigger = {
+ 		ai = yes
+ 		is_subject = yes
+ 		liberty_desire = 70
+ 		NOT = { 
+ 			is_subject_of_type = tributary_state #Tributary states work fine in vanilla IMO. Disloyal tributaries in vanilla are effectively independent and just refuse to pay tribute, which is fine.
+ 		}
+ 		overlord = {
+ 			NOT = {
+ 				truce_with = ROOT
+ 				}
+ 		}
+ 	}
+ 
+ 	mean_time_to_happen = {
+ 		years = 40
+ 
+ 		modifier = {
+ 			factor = 0.7
+ 			liberty_desire = 80
+ 		}
+ 
+ 		modifier = {
+ 			factor = 0.7
+ 			liberty_desire = 90
+ 		}
+ 
+ 		modifier = {
+ 			factor = 0.7
+ 			liberty_desire = 99
+ 		}
+ 
+ 		modifier = { # Faster for supported countries
+ 			factor = 0.7 #Up from 0.5.
+ 			liberty_desire = 90
+ 			any_country = {
+ 				is_supporting_independence_of = ROOT
+ #				ai = no  #Let the AI destroy each other instead of giving the player superpowers.
+ 			}
+ 		}
+ 
+ #		modifier = { # less likely to take effect for tributaries, as they're semi-independant #Now can't happen for tributaries at all.
+ #			factor = 1.5
+ #			is_subject_of_type = tributary_state
+ #		}
+ 	}
+ 
+ 	option = {
+ 		name = hldvdw_events.1.a
+ 		ai_chance = { factor = 100 }
+ 		if = {
+ 			limit = { is_colonial_nation = yes }
+ 
+ 			declare_war_with_cb = {
+ 				who = overlord
+ 				casus_belli = cb_colonial_independence_war
+ 			}
+ 		}
+ 		else_if = {
+ 			limit = { has_reform = daimyo }
+ 
+ 			declare_war_with_cb = {
+ 				who = overlord
+ 				casus_belli = cb_daimyo_annex
+ 			}
+ 		}
+ 		else = {
+ 			declare_war_with_cb = {
+ 				who = overlord
+ 				casus_belli = cb_independence_war
+ 			}
+ 		}
+ 	}
+ }
+ 

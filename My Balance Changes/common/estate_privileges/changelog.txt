@@ -1,0 +1,35 @@
+######################
+#Nobility: 
+######################
+#Changed Golden Liberty (Poland-exclusive privilege) to greatly reduce tax modifier and also provide less manpower than in vanilla.
+#French strong duchies is better at keeping vassals loyal but no longer gives any nobility loyalty equilibrium.
+
+######################
+#Eunuchs: 
+######################
+#Reduced the amount of corruption given by eunuch privileges. With the anti-blobbing mod, Ming already gets a lot of corruption simply from being near government capacity cap, so if this is left unchanged then AI ming becomes ridiculously weak and falls apart easily.
+#Affected Eunuch privileges:
+
+#estate_eunuchs_palace_bureaucracy_privilege
+#estate_eunuchs_delegate_provincial_administration_privilege
+#estate_eunuchs_land_rights_privilege
+#estate_eunuchs_royal_intrigue_keepers_privilege 
+#estate_eunuchs_delegate_subject_diplomacy_privilege
+#estate_eunuchs_allow_personal_fortunes_privilege
+
+######################
+#Church: 
+######################
+#Changed Inwards Perfection so that its still available to Eastern Religion Group countries whose governments' have the Perfectionism mechanic (IE Korea's default government type Hermit Kingdom. This is so I could make Korea start with inwards perfection to try and make the AI REALLY isolationist.
+#Inwards Perfection again: Inwards perfection now also increases church influence by a whopping 20 (was 10) and gives 0 to Church Loyalty Equilibrium (was 5) to make it a lot more difficult to remove, because I don't want Korea and Dai Viet acting insane AND I want Ming to be a pain in the ass to play for myself.
+
+######################
+#Tribes
+######################
+#Changed primary of the bannermen so that it grants more banners rather than less. Idea is to make Manchu stronger, even if a bit ahistorically, so they don't get conquered by Korea right from the start of the game. Max absolutism reduction increased to -10 from -5, to at least give it a catch.
+
+######################
+#All
+######################
+Reduced all files to just the changes I made, renamed all too. Seems estate privileges are additive.
+Every single land rights privilege now adds 150 governing capacity instead of 100.

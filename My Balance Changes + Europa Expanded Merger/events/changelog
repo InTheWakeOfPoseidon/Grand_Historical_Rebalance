@@ -1,0 +1,5 @@
+######Temporarily excising all Austria-content from Europa Expanded because the country is ridiculously OP.
+##ME_Ottoman_Events
+###Ottomans can no longer turn Crimea into a vassal/march with an event, it now simply sets tributary state in case it's not currently set.
+##ME_Crimea_Events
+###Ottomans can no longer turn Crimea into a vassal/march with an event, needs to be changed on both Crimean and Ottoman event files to work.

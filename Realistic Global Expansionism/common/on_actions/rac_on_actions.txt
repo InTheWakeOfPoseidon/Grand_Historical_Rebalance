@@ -1,0 +1,11 @@
+on_startup = {
+	events = {
+		real_african_colonization.1
+		real_african_colonization.2
+		real_african_colonization.3
+		real_african_colonization.4
+		real_african_colonization.5
+		real_african_colonization.6
+		real_african_colonization.7
+	}
+}

@@ -1,0 +1,4 @@
+#DH_Timurid_Missions.txt
+#Changed the mission Indian raid (dh_indian_raid) to only require forcelimit army size, rather than the current 40k troops. This makes it more likely that Afghanistan will succeed at the mission and try to attack India.
+#DOM_Ottoman_Missions.txt
+#tur_refill_the_ortas grants cores now, to make Ottoman AI much more aggressive in unifying Anatolia.

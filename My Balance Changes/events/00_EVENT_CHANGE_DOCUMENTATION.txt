@@ -1,0 +1,48 @@
+#Add comments here when you change a vanilla event, since you have to edit the whole file. This way you remember which events were actually changed.
+
+
+###flavorTurkoman.txt
+#Changed event The Death of Ispend Mirza (flavor_turkoman.6) to change autonomy by -20 (was -100). Replaced king_of_kings_l_english.yml in order to change the localization line turkmen_emirs_of_baghdad_remove_tt in order to signal the new autonomy change properly.
+#Vanilla files replaced: events\flavorTurkoman.txt, localisation\king_of_kings_l_english.yml
+
+###flavorTIM.txt.
+#Changed the TIM event Death of Shah-Rukh to increase negative effects from the event triggering, by adding a -50 legitimacy hit that previously wasn't there. Added a rebel army spawn to force Timurid collapse but it's not an elegant solution.
+#Vanilla files replaced: events\flavorTIM.txt
+
+
+###high_liberty_desire_vassals_actually_declare_independence.txt
+#Integrated mod that gives AI-controlled vassals with liberty desire above 70% an event to declare independence war, with a MTTH of 40 years that is decreased with higher and higher liberty desire. MTTH is further decreased for high liberty desire vassals receiving foreign support, with a personal change I made to the mod making this always be the case instead of if the supporter is exclusively a player, but changed the factor from 0.5 to 0.6. Rebellious vassals should be a huge pain if they're receiving foreign support, regardless of if its a player or not. Event can no longer happen for tributaries, which work fine as they are IMO, and its way worse and more jarring for Korea to spontaneously invade Ming. Disloyal tributaries already refuse to pay tribute anyway. Added line to prevent the event from triggering if a truce exists with overlord country.
+#NEW: Removed because it causes too much weird bullshit.
+
+###00_maghreb_crisis
+#Integrate change from Eurocentric Institutions mod (lol) to increase length of Maghreb Crisis event for Morocco, aswell as intensify its effects in event_modifiers.
+
+###FlavorTUR.txt
+#The event that turns the Egyptians into an eyalet now gives the Ottomans all provinces that the Egyptians own in the middle east. Might make them give em cores too. It also removes all cores from Egypt/Mamluks so Ottomans don't give them the provinces.
+#Made the events for Mamluk collapse trigger much faster and with lower warscore. AI is too stupid to work with the long ones. Made the AI never take the non-annexation option.
+#tur_mamlukian_administration (which prevents ottomans from annexing Egypt eyalet at all) now expires after 50 years instead of lasting forever. The entire thing is completely ahistorical nonsense anyway.
+#On second thought, make it 100 years. Ottoman AI can't manage that much territory that early. Governing capacity swamps them with horrific amounts of corruption and thus decadence.
+
+###flavorKON.txt
+#The event "become a proper monarchy" for Kongo destroys the tech balance of south-central Africa by immediately giving Kongo a settled monarchy type government and thus the ability to rapidly feed institutions to the region. I'm changing it to keep Kongo tribal but give them reform progress instead.
+
+###(OccupyAnnexEvents).txt
+#Necessary to make provinces flip ownership directly when occupied during Chinese civil war conflicts.
+
+###scripted_AI_wars.txt
+#A bit railroady but added a script to make AI oirat always attack Ming at the start of the game. AI Oirat only starts the war now because Ming is over-nerfed, and I want Oirat to do it even after I fix Ming's deplorable starting situation.
+
+###new_oirat_events.txt
+#Added event for Oirats to release Mongolia if they haven't defeated Ming by 1460.
+#Deleted this event because it buggily caused player-controlled Mongolia to get annexed somehow.
+
+###new_ming_events.txt
+#Added events for Ming, Mongolia and Oirat where, if Oirat is a tributary of Ming, and Mongolia is a vassal of Oirat, Mongolia becomes a tributary too.
+
+###disaster_ming_crisis.txt
+#In the event ming_crisis.9, Manchu now declares war on Shun with the Unify China CB, which they now have access to.
+#In the event ming_crisis.9, Manchu now gets a ton of extra manpower, maxed out horde unity, and 30 tribes estate loyalty. I want Manchu to win. 
+
+
+###flavorCRI.txt
+#Made it much more likely that Crimea will ask for support from Turkey. The AI factors are completely changed to make it more likely if Turkey has over 30 provinces, if Turkey controls constantinople, and if Turkey is AI. I don't want the Ottomans conquering in that direction, and tributary Crimea would help a lot.

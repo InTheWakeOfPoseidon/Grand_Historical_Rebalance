@@ -1,0 +1,430 @@
+namespace = scripted_wars
+
+
+country_event = {
+	id = scripted_wars.1
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = OIR
+		ai = yes
+		is_at_war = no
+		is_subject = no
+		NOT = { owns = 1816 }
+		NOT = { num_of_rebel_armies = 1 }
+		has_ruler_modifier = esenchoros_empire
+		MNG = {
+			NOT = { is_subject = yes }
+			NOT = { truce_with = OIR }
+			owns = 1816
+		}
+		KHA = {
+			is_subject_of = OIR
+			NOT = { liberty_desire = 50 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	option = {
+		name = "Attack."
+		ai_chance = {
+			factor = 85
+		}
+		declare_war_with_cb = {
+			who = MNG
+			casus_belli = cb_horde_vs_civ
+			war_goal_province = 1816
+		}
+	}
+
+	option = {
+		name = "Do nothing."
+		ai_chance = {
+			factor = 15
+		}
+		add_prestige = 0
+	}
+}
+
+
+country_event = {
+	id = scripted_wars.2
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIM
+		ai = yes
+		is_at_war = no
+		OR = {
+			has_ruler_modifier = me_tim_babur_ai
+			has_ruler_modifier = ME_rise_of_babur
+			has_ruler_modifier = ME_rise_of_babur_1
+		}
+		NOT = { has_global_flag = babur_delhi_war }
+		522 = {
+			OR = {
+				is_claim = TIM
+				is_permanent_claim = TIM
+				is_core = TIM
+			}
+			owner = {
+				ai = yes
+				OR = {
+					is_at_war = yes
+					is_bankrupt = yes
+					NOT = { army_size_percentage = 0.5 }
+					NOT = { army_size = TIM }
+				}
+				NOT = { truce_with = TIM }
+				NOT = { alliance_with = TIM }
+				NOT = { num_of_allies = 3 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		TIM = {
+			add_yearly_manpower = 5
+			add_army_tradition = 5
+			add_treasury = 1000
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.7
+					cavalry = 0.3
+				}
+			}
+		}
+		522 = {
+			owner = {
+				save_event_target_as = target_of_war
+			}
+		}
+		set_global_flag = babur_delhi_war
+	}
+
+	after = {
+		declare_war_with_cb = {
+			who = event_target:target_of_war
+			casus_belli = cb_core
+			war_goal_province = 522
+		}
+	}
+
+	option = {
+	}
+}
+
+
+country_event = {
+	id = scripted_wars.3
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = MUG
+		ai = yes
+		is_at_war = no
+		OR = {
+			has_ruler_modifier = me_tim_babur_ai
+			has_ruler_modifier = ME_rise_of_babur
+			has_ruler_modifier = ME_rise_of_babur_1
+		}
+		NOT = { has_global_flag = babur_delhi_war }
+		522 = {
+			OR = {
+				is_claim = MUG
+				is_permanent_claim = MUG
+				is_core = MUG
+			}
+			owner = {
+				ai = yes
+				OR = {
+					is_at_war = yes
+					is_bankrupt = yes
+					NOT = { army_size_percentage = 0.5 }
+				}
+				NOT = { truce_with = MUG }
+				NOT = { alliance_with = MUG }
+				NOT = { num_of_allies = 3 }
+				NOT = { army_size = MUG }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		MUG = {
+			add_yearly_manpower = 5
+			add_army_tradition = 5
+			add_treasury = 1000
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.7
+					cavalry = 0.3
+				}
+			}
+		}
+		522 = {
+			owner = {
+				save_event_target_as = target_of_war
+			}
+		}
+		set_global_flag = babur_delhi_war
+	}
+
+	after = {
+		declare_war_with_cb = {
+			who = event_target:target_of_war
+			casus_belli = cb_core
+			war_goal_province = 522
+		}
+	}
+
+	option = {
+	}
+}
+
+
+#SPA -  Spain and Castille
+country_event = {
+	id = scripted_wars.4
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = SPA
+		ai = yes
+		is_at_war = no
+		NOT = { has_global_flag = SPA_Mexico_Conquest_1 }
+		NOT = {
+			any_country = {
+				capital_scope = {
+					region = mexico_region
+				}
+				ai = no
+			}
+		}
+		SPA = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					region = carribeans_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					region = central_america_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					region = mexico_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					region = rio_grande_region
+				}
+			}
+			has_discovered = 2647
+			has_discovered = 848
+		}
+		2647 = {
+			NOT = { owned_by = SPA }
+			owner = {
+				ai = yes
+				primitives = yes
+				NOT = { truce_with = SPA }
+				NOT = { alliance_with = SPA }
+				all_ally = {
+					is_great_power = no
+				}
+			}
+		}
+		848 = {
+			NOT = { owned_by = SPA }
+			owner = {
+				ai = yes
+				primitives = yes
+				NOT = { truce_with = SPA }
+				NOT = { alliance_with = SPA }
+				all_ally = {
+					is_great_power = no
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		SPA = {
+			add_claim = 848
+			add_claim = 2647
+		}
+		848 = {
+			owner = {
+				save_event_target_as = target_of_war
+			}
+		}
+		2647 = {
+			owner = {
+				save_event_target_as = target_of_war_2
+			}
+		}
+		set_global_flag = SPA_Mexico_Conquest_1
+	}
+
+	after = {
+		declare_war_with_cb = {
+			who = event_target:target_of_war
+			casus_belli = cb_conquest
+			war_goal_province = 848
+		}
+		declare_war_with_cb = {
+			who = event_target:target_of_war_2
+			casus_belli = cb_conquest
+			war_goal_province = 2647
+		}
+	}
+
+	option = {
+	}
+}
+
+
+country_event = {
+	id = scripted_wars.5
+	title = "NONE"
+	desc = "NONE"
+	picture = "NONE"
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAS
+		ai = yes
+		is_at_war = no
+		NOT = { has_global_flag = SPA_Mexico_Conquest_1 }
+		NOT = {
+			any_country = {
+				capital_scope = {
+					region = mexico_region
+				}
+				ai = no
+			}
+		}
+		CAS = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					region = carribeans_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					region = central_america_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					region = mexico_region
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					region = rio_grande_region
+				}
+			}
+			has_discovered = 2647
+			has_discovered = 848
+		}
+		2647 = {
+			NOT = { owned_by = CAS }
+			owner = {
+				ai = yes
+				primitives = yes
+				NOT = { truce_with = CAS }
+				NOT = { alliance_with = CAS }
+				all_ally = {
+					is_great_power = no
+				}
+			}
+		}
+		848 = {
+			NOT = { owned_by = CAS }
+			owner = {
+				ai = yes
+				primitives = yes
+				NOT = { truce_with = CAS }
+				NOT = { alliance_with = CAS }
+				all_ally = {
+					is_great_power = no
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		CAS = {
+			add_claim = 848
+			add_claim = 2647
+		}
+		848 = {
+			owner = {
+				save_event_target_as = target_of_war
+			}
+		}
+		2647 = {
+			owner = {
+				save_event_target_as = target_of_war_2
+			}
+		}
+		set_global_flag = SPA_Mexico_Conquest_1
+	}
+
+	after = {
+		declare_war_with_cb = {
+			who = event_target:target_of_war
+			casus_belli = cb_conquest
+			war_goal_province = 848
+		}
+		declare_war_with_cb = {
+			who = event_target:target_of_war_2
+			casus_belli = cb_conquest
+			war_goal_province = 2647
+		}
+	}
+
+	option = {
+	}
+}
